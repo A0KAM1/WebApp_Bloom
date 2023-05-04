@@ -2,9 +2,9 @@
 
 namespace WebApp_Bloom.Controllers
 {
-    public class ListaConvidados : Controller
+    public class EventoController : Controller
     {
-        public IActionResult Lista()
+        public IActionResult Index()
         {
             return View();
         }
