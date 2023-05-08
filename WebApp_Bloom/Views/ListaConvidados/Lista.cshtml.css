@@ -21,7 +21,10 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     height: 40px;
+    border: 1px solid;
+    border-color: black;
 }
-.imagem{
-    height: 30px;
+.imagem {
+    display: inline;
+    height: 5px;
 }
