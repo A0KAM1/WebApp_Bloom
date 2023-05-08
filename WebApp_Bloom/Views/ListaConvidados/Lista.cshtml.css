@@ -1,0 +1,27 @@
+﻿.title {
+    color: #ab595e;
+    font-size: 30px;
+}
+
+.cardprincipal {
+    background-color: #f3b6b6;
+    border: 1px solid;
+    border-radius: 15%;
+}
+.busca {
+    background-color: #f3b6b6;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid;
+    border-color: black;
+    height: 40px;
+}
+.botao{
+    background-color: #f3b6b6;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 40px;
+}
+.imagem{
+    height: 30px;
+}
