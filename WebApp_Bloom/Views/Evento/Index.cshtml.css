@@ -7,19 +7,28 @@
     background-color: #f3b6b6;
     border: 1px solid;
     border-color: #ab595e;
-    border-radius: 5%;
-    height: 25%;
+    border-radius: 30px;
+    height: fit-content;
+    width: fit-content;
+    padding: 5%;
 }
 
-.bolo_anel{
-    display: inline;
-    height: 5px;
+span{
+    width: fit-content;
+}
+
+.row{
+    justify-content: center;
+    align-items: center;
 }
 
 .botao {
     background-color: #ffffff;
     color: #ab595e;
     height: 60px;
+    width: fit-content;
+    height: fit-content;
     text-transform: 30px;
     border-radius: 30px;
+    padding: 2%;
 }
