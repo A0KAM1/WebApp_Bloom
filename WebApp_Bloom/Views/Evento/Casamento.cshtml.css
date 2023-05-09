@@ -4,6 +4,7 @@
     background-color: #f3b6b6;
     border: 1px solid;
     border-radius: 10px;
+    padding: 2%;
 }
 .botao{
     background-color: transparent;
@@ -13,21 +14,23 @@
 p{
     display: inline;
 }
+<<<<<<< HEAD
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-.descricao{
-    width: 200px;
-    height:200px;
+.listas{
+    display: flex;
+    width: 100%;
+}
+.cermonia{
+    display: inline;
+    width: 50%;
+}
+.festa{
+    display: inline;
+    width: 50%;
+>>>>>>> a6a1465760e8b7862515136ee4c37b26d4710f45
 }
