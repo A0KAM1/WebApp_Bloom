@@ -4,7 +4,7 @@ namespace WebApp_Bloom.Controllers
 {
     public class EventoController : Controller
     {
-        public IActionResult Index()
+        public IActionResult SelecionarEvento()
         {
             return View();
         }
