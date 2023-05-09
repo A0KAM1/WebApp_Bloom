@@ -1,4 +1,4 @@
-﻿<div class="">
+﻿<div>
     <h2>DADOS PESSOAIS</h2>
     <div class="cardprincipal">
         <lable>Nome: </lable>
@@ -17,44 +17,71 @@
     </div>
     <h2>CRONOGRAMA</h2>
     <div class="cardprincipal">
-        <lable>Data do Evento</lable>
-        <input />
-        <lable>Horário: </lable>
-        <input />
-        <br/>
-        <p><img style="width: 15px;" src="~/css/checkzinho.png" />CERIMÔNIA</p>
-        <button class="botao">(+)</button>
-        <table>
-
-        </table>
-        <p><img style="width: 15px;" src="~/css/checkzinho.png" />FESTA</p>
-        <button class="botao">(+)</button>
-        <table>
-
-        </table>
+        <div>
+            <lable>Data do Evento</lable>
+            <input />
+            <lable>Horário: </lable>
+            <input />
+        </div>
+        <div class="baixo">
+            <div class="meio">
+                <p><img style="width: 15px;" src="~/css/checkzinho.png" />CERIMÔNIA</p>
+                <button class="botao">(+)</button>
+                <table>
+                </table>
+            </div>
+            <div class="meio">
+                <p><img style="width: 15px;" src="~/css/checkzinho.png" />FESTA</p>
+                <button class="botao">(+)</button>
+                <table>
+                </table>
+            </div>
+        </div>
     </div>
     <h2>CONVIDADOS</h2>
     <div class="cardprincipal">
-        <label>Nome: </label>
-        <input type="text" required/>
-        <label>Telefone: </label>
-        <input type="text" required/>
-        <label>Mesa: </label>
-        <input type="number" />
-        <button>+</button>
-        <button>Ver Lista</button>
+        <div class="baixo">
+            <div class="meio">
+                <label>Nome: </label>
+                <input type="text" required />
+                <br />
+                <label>Telefone: </label>
+                <input type="text" required />
+                <br />
+                <label>Mesa: </label>
+                <input type="number" />
+            </div>
+            <div class="meio">
+                <button>Ver Lista</button>
+                <br/>
+                <button>+</button>
+            </div>
+        </div>
     </div>
     <h2>FORNECEDORES</h2>
     <div class="cardprincipal">
-        <label>Nome: </label>
-        <input type="text" required />
-        <label>Produto: </label>
-        <input type="text" required />
-        <label>Telefone: </label>
-        <input type="text" required />
-        <label>Descrição: </label>
-        <input class="descricao" type="text" />
-        <button>+</button>
-        <button>Ver Lista</button>
+        <div class="baixo">
+            <div class="meio">
+                <div >
+                    <label>Nome: </label>
+                    <input type="text" required />
+                </div>
+                <div>
+                    <label>Produto: </label>
+                    <input type="text" required />
+                </div>
+                <div>
+                    <label>Telefone: </label>
+                    <input type="text" required />
+                </div>
+                <label>Descrição: </label>
+                <input class="descricao" type="text" />
+            </div>
+            <div class="meio">
+                <button>Ver Lista</button>
+                <br />
+                <button>+</button>
+            </div>
+        </div>
     </div>
 </div>
