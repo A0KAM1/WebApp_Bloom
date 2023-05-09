@@ -1,0 +1,48 @@
+﻿/*padding-top padding-right padding-bottom padding-left*/
+
+.pai{
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card_evento {
+    background-color: #f3b6b6;
+
+    border: 1px solid;
+    border-color: #ab595e;
+    border-radius: 10px;
+
+    height: fit-content;
+    width: 25%;
+
+    padding: 2% 0.5% 0 0.5%;
+
+    margin: auto;
+}
+
+span{
+    width: fit-content;
+    padding-right: 4%;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7%;
+}
+
+.botao {
+    background-color: #ffffff;
+    color: #ab595e;
+
+    height: fit-content;
+    width: 150px;
+
+    border-radius: 30px;
+}
+
+.botao:hover{
+    border: 1px solid;
+    border-color: #ab595e;
+}
