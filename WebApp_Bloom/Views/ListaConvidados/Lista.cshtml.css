@@ -6,22 +6,30 @@
 .cardprincipal {
     background-color: #f3b6b6;
     border: 1px solid;
-    border-radius: 15%;
+    border-radius: 10px;
 }
-.busca {
-    background-color: #f3b6b6;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+.botao_buscar{
     border: 1px solid;
+    height: 60px;
+    border-radius: 50px;
+    width:fit-content;
     border-color: black;
-    height: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
-.botao{
-    background-color: #f3b6b6;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    height: 40px;
+input{
+    background-color: transparent;
+    border: none;
 }
-.imagem{
-    height: 30px;
+.botao {
+    background-color: transparent;
+    border: none;
+}
+
+textarea:focus, input:focus, select:focus{
+    box-shadow: 0;
+    border: none;
+    outline: 0;
+    color:black;
 }
