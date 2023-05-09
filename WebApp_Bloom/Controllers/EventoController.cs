@@ -8,5 +8,13 @@ namespace WebApp_Bloom.Controllers
         {
             return View();
         }
+        public IActionResult Casamento()
+        {
+            return View();
+        }
+        public IActionResult Aniversario()
+        {
+            return View();
+        }
     }
 }
