@@ -27,7 +27,24 @@ input{
     border: none;
 }
 
-textarea:focus, input:focus, select:focus{
+.checkmark {
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 0.8px solid;
+    border-color: black;
+}
+
+
+.container input:checked ~ .checkmark {
+    background-color: black;
+    border: 0.8px solid;
+    border-color: black;
+}
+
+textarea: focus, input:focus, select:focus{
     box-shadow: 0;
     border: none;
     outline: 0;
