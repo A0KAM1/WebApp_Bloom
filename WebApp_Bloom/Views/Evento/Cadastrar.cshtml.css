@@ -12,7 +12,11 @@ h2{
 }
 
 /*-------------------------------------------*/
-
+.pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .cardprincipal {
     background-color: #f3b6b6;
     border: 1px solid;
