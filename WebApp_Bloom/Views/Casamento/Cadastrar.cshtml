@@ -1,121 +1,145 @@
 ﻿<div>
-    <h2>DADOS PESSOAIS</h2>
-    <div class="pai">
+    <p><a href="/Home">Evento</a><a>></a><a>Cadastrar Casamento</a></p>
+    <div class="formulario">
+        <h2>DADOS PESSOAIS</h2>
         <div class="cardprincipal">
             <form>
                 <div class="row">
-                    <div class="col-6 elemento">
-                        <lable>Nome: </lable>
-                        <input type="text" />
-                    </div>
+
                     <div class="col-6">
-                        <lable>RG: </lable>
-                        <input type="text" />
+                        <label>Nome: </label>
+                        <input type="text" placeholder="*" />
                     </div>
-                </div>
-                <div class="row">
+
                     <div class="col-6">
-                        <lable>Nome: </lable>
-                        <input type="text" />
-                    </div>
-                    <div class="col-6">
-                        <lable>RG: </lable>
-                        <input type="text" />
+                        <label>Nome: </label>
+                        <input type="text" placeholder="*" />
                     </div>
                 </div>
+
                 <div class="row">
+
                     <div class="col-6">
-                        <lable>Telefone*:</lable>
-                        <input type="text" required />
+                        <label>RG: </label>
+                        <input type="text" placeholder="*" />
                     </div>
+
                     <div class="col-6">
-                        <input type="text" />
+                        <label>RG: </label>
+                        <input type="text" placeholder="*" />
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Telefone:</label>
+                        <input type="text" required placeholder="*" />
+                    </div>
+
+                    <div class="col-6">
+                        <label>Telefone:</label>
+                        <input type="text" required placeholder="*" />
                     </div>
                 </div>
             </form>
         </div>
     </div>
-</div>
 
+    <div class="formulario">
+        <h2>CRONOGRAMA</h2>
+        <div class="cardprincipal">
+            <form>
+                <div class="row">
+                    <div class="meio">
+                        <label>Data do Evento:</label>
+                        <input type="date" />
+                    </div>
+                    <div class="meio">
+                        <label>Horário:</label>
+                        <input type="time" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="meio">
+                        <p>CERIMÔNIA</p>
+                        <button class="botao">(+)</button>
 
-@*<div>
-    <h2>CRONOGRAMA</h2>
-    <div class="cardprincipal">
-        <div>
-            <lable>Data do Evento: </lable>
-            <input />
-            <lable>Horário: </lable>
-            <input />
-        </div>
-        <div class="baixo">
-            <div class="meio">
-                <p><img style="width: 15px;" src="~/css/checkzinho.png" />CERIMÔNIA</p>
-                <button class="botao">(+)</button>
-                <table>
-                </table>
-            </div>
-            <div class="meio">
-                <p><img style="width: 15px;" src="~/css/checkzinho.png" />FESTA</p>
-                <button class="botao">(+)</button>
-                <table>
-                </table>
-            </div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="meio">
+                        <p>FESTA</p>
+                        <button class="botao">(+)</button>
+
+                        <table>
+                        </table>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
-</div>
-<div>
-    <h2>CONVIDADOS</h2>
-    <div class="cardprincipal">
-        <div class="baixo">
-            <div class="meio">
-                <div>
-                    <label>Nome*: </label>
-                    <input type="text" required />
+
+    <div class="formulario">
+        <h2>CONVIDADOS</h2>
+        <div class="cardprincipal">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Nome:</label>
+                            <input type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label>Mesa:</label>
+                            <input type="number"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone:</label>
+                            <input type="tel" />
+                        </div>
+                    </div>
+                    <div class="meio">
+                        <a class="btn botao2" href="/Convidados/Lista">Ver lista</a>
+                        <button class="btn botao2" type="submit">+</button>
+                    </div>
                 </div>
-                <div>
-                    <label>Telefone*: </label>
-                    <input type="text" required />
-                </div>
-                <div>
-                    <label>Mesa: </label>
-                    <input type="number" />
-                </div>
-            </div>
-            <div class="meio">
-                <button>Ver Lista</button>
-                <br />
-                <button>+</button>
-            </div>
+            </form>
         </div>
     </div>
-</div>
-<div>
-    <h2>FORNECEDORES</h2>
-    <div class="cardprincipal">
-        <div class="baixo">
-            <div class="meio">
-                <div>
-                    <label>Nome*: </label>
-                    <input type="text" required />
+@*    
+    <div class="formulario">
+        <h2>FORNECEDOR</h2>
+        <div class="cardprincipal">
+            <form>
+                <div class="col-6-2">
+                    <div class="form-group">
+                        <label>Nome:</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone:</label>
+                        <input type="tel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Produto:</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição:</label>
+                        <input type="text" />
+                    </div>
                 </div>
-                <div>
-                    <label>Produto*: </label>
-                    <input type="text" required />
+                <div class="col-6-2">
+                    <a class="botao2">Ver lista</a>
+                    <button type="submit">+</button>
                 </div>
-                <div>
-                    <label>Telefone*: </label>
-                    <input type="text" required />
-                </div>
-                <div>
-                </div>
-                <label>Descrição: </label>
-                <input class="descricao" type="text" />
-            </div>
-            <div class="meio">
-                <button>Ver Lista</button>
-                <br />
-                <button>+</button>
-            </div>
+            </form>
         </div>
+    </div>*@
+
+    <div class="formulario">
+        <button type="submit">CONCLUIR</button>
     </div>
-</div>*@
+</div>   

@@ -1,5 +1,13 @@
-﻿p {
+﻿.formulario{
+    margin-top: 5%;
+}
+p {
     display: inline;
+    margin: 0;
+    height: fit-content;
+}
+button{
+    height: fit-content;
 }
 .botao{
     background-color: transparent;
@@ -10,42 +18,61 @@ h2{
     text-align: center;
     display: block;
 }
-.pai{ /*Não apagar*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-textarea: focus, input:focus, select:focus {
-    box-shadow: 0;
-    border: none;
-    outline: 0;
-    color: black;
-}
 
-/*-------------------------------------------*/
-
+/*Caminho de Rato*/
+a {
+    text-decoration: none;
+    color: #ab595e;
+    font-size: 14px;
+}
+/*Indicacao de botao no caminho de rato*/
+a:hover {
+    text-decoration-line: underline;
+}
 .row{
     margin-bottom: 1%;
 }
 .cardprincipal {
     background-color: #f3b6b6;
     border-radius: 30px;
-    padding: 1%;
+    padding: 2%;
     margin-right: 0;
-    display: flex;
+
 }
+
+/*-------------------------------------------*/
+
 label{
-    padding-right: 1px;
+    padding-right: 2%;
 }
 input{
-    border: none;
-    width: 60%;
+    border: 1px solid black;
+    width: 65%;
+    height: fit-content;
+    color: black;
+}
+
+/*-------------------------------------------*/
+
+.botao2{
+    background-color: white;
+
+}
+
+/*-------------------------------------------*/
+
+.col-6{
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .meio{
     width: 50%;
-    display: inline;
-}
-.col-6{
     display: flex;
-    float: right;
+    justify-content: center;
+    align-items: center;
+}
+.col-6-2{
+    width: 50%;
+    display: inline;
 }
