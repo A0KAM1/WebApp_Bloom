@@ -2,9 +2,9 @@
 
 namespace WebApp_Bloom.Controllers
 {
-    public class ListaConvidadosController : Controller
+    public class AniversarioController : Controller
     {
-        public IActionResult Lista()
+        public IActionResult Cadastrar()
         {
             return View();
         }

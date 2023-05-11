@@ -2,7 +2,7 @@
 
 namespace WebApp_Bloom.Controllers
 {
-    public class EventoController : Controller
+    public class CasamentoController : Controller
     {
         public IActionResult Cadastrar()
         {
