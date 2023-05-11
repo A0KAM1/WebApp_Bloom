@@ -19,8 +19,13 @@
             <button class="hamburguer" onclick="openNav()"><img src="~/css/hamburguer.png" /></button>
             <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a href="/Casamento/Cadastrar">Casamento</a>
-                <a href="/Convidados/Lista">Convidados</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Evento</button>
+                    <div class="dropdown-content">
+                        <a href="/Casamento/Cadastrar">Casamento</a>
+                        <a href="/Aniversario/Cadastrar">Anviersário</a>
+                    </div>
+                </div>
             </div>
             <div class="navbar-header">
                 <a class="navbar-brands"><img style="height: 60px;alin: center;" src="~/css/Bloom (1).png" /></a>
