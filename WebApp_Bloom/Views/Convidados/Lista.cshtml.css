@@ -6,7 +6,7 @@
 a {
     text-decoration: none;
     color: #ab595e;
-    font-size:12px;
+    font-size:14px;
 }
 /*Indicacao de botao no caminho de rato*/
 a:hover {
@@ -19,13 +19,17 @@ a:hover {
 h2{
     text-align: center;
 }
+.imagem{
+    width:400px;
+    height:400px;
+}
 .cardprincipal {
     background-color: #f3b6b6;
     border-radius: 30px;
 }
 .botao_buscar{
     border: 1px solid;
-    height: 60px;
+    height: 45px;
     border-radius: 50px;
     width:fit-content;
     border-color: black;
@@ -40,6 +44,9 @@ input{
 .botao {
     background-color: transparent;
     border: none;
+}
+.letra{
+    color: black;
 }
 /*tirar a borda da barra de pesquisar. obs: caso bugue, nao pode ter espaco depois dos dois pontos*/
 textarea:focus, input:focus, select:focus {
@@ -96,7 +103,7 @@ textarea:focus, input:focus, select:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 /*Esconde o checkbox do sistema*/
 .quadrado input {
