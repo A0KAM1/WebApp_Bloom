@@ -10,19 +10,27 @@ h2{
     text-align: center;
     display: block;
 }
-.pai{
+.pai{ /*Não apagar*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
+textarea: focus, input:focus, select:focus {
+    box-shadow: 0;
+    border: none;
+    outline: 0;
+    color: black;
+}
 
 /*-------------------------------------------*/
 
+.row{
+    margin-bottom: 1%;
+}
 .cardprincipal {
     background-color: #f3b6b6;
     border-radius: 30px;
     padding: 1%;
-    width: 60%;
     margin-right: 0;
     display: flex;
 }
@@ -31,9 +39,13 @@ label{
 }
 input{
     border: none;
-    width: 25%;
+    width: 60%;
 }
 .meio{
     width: 50%;
     display: inline;
+}
+.col-6{
+    display: flex;
+    float: right;
 }
