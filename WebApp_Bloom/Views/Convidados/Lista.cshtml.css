@@ -2,6 +2,20 @@
     color: #ab595e;
     font-size: 30px;
 }
+/*Caminho de Rato*/
+a {
+    text-decoration: none;
+    color: #ab595e;
+    font-size:12px;
+}
+/*Indicacao de botao no caminho de rato*/
+a:hover {
+    text-decoration-line: underline;
+}
+.caminho{
+    font-size:12px;
+    display: inline;
+}
 h2{
     text-align: center;
 }
@@ -27,7 +41,13 @@ input{
     background-color: transparent;
     border: none;
 }
-
+/*tirar a borda da barra de pesquisar. obs: caso bugue, nao pode ter espaco depois dos dois pontos*/
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0;
+    border: none;
+    outline: 0;
+    color: black;
+}
 
 /*Criacao da checkbox personalizada*/
 .checkmark {
@@ -76,7 +96,7 @@ input{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 /*Esconde o checkbox do sistema*/
 .quadrado input {
@@ -92,11 +112,25 @@ input{
     border-color: black;
 }
 
-
-
-textarea:focus, input:focus, select:focus{
-    box-shadow: 0;
+/*Input da mesa*/
+.mesa{
     border: none;
-    outline: 0;
-    color:black;
+    background-color: white;
+    border-radius: 5px;
+    width: 70px;
+    color: black;
+    text-align: center;
+    display: block;
+}
+/*Input total*/
+.total{
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+/*Tirar os botoes do input number*/
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

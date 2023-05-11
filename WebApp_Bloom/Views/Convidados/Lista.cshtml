@@ -1,29 +1,32 @@
 ﻿<div class="row">
-    <h2>CONVIDADOS</h2>
+    <p><a href="/Home">Evento</a><a>></a><a href="/Casamento/Cadastrar">Cadastrar Casamento</a><a>></a><a>Convidados</a></p>
+    <h2>CONVIDADOS CASAMENTO</h2>
         <div class=" card-body cardprincipal">
             <div class="botao_buscar">
                 <button class="botao">
                     <img class="imagem" src="~/css/pesquisar.png" />
                 </button>
-                <input type="text" />
+                <input  id="myInput" type="text" />
             </div>
             <form>
-                <table class="table">
+                <table id="myTable" class="table">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Mesa</th>
+                            <th style="width: 10%"></th>
+                            <th style="width: 65%"></th>
+                            <th style="width: 25%">MESA</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <td><label class="quadrado"><input type="checkbox" /><span class="checkmark"></span></label></td>
                             <td></td>
-                            <td></td>
+                            <td><input class="mesa" type="number" value="1"></input></td>
                         </tr>
                     </tbody>
                 </table>
             </form>
+            <label>TOTAL</label>
+            <input class="total" type="number" />
         </div>
 </div>
