@@ -1,145 +1,149 @@
 ﻿<div>
-    <p><a href="/Home">Evento</a><a>></a><a>Cadastrar Casamento</a></p>
-    <div class="formulario">
-        <h2>DADOS PESSOAIS</h2>
-        <div class="cardprincipal">
-            <form>
-                <div class="row">
+    <p>
+        <a href="/Home">Evento</a>
+        <a>></a>
+        <a>Cadastrar Casamento</a>
+    </p>
 
-                    <div class="col-6">
-                        <label>Nome: </label>
-                        <input type="text" placeholder="*" />
-                    </div>
-
-                    <div class="col-6">
-                        <label>Nome: </label>
-                        <input type="text" placeholder="*" />
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-6">
-                        <label>RG: </label>
-                        <input type="text" placeholder="*" />
-                    </div>
-
-                    <div class="col-6">
-                        <label>RG: </label>
-                        <input type="text" placeholder="*" />
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-6">
-                        <label>Telefone:</label>
-                        <input type="text" required placeholder="*" />
-                    </div>
-
-                    <div class="col-6">
-                        <label>Telefone:</label>
-                        <input type="text" required placeholder="*" />
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="formulario">
-        <h2>CRONOGRAMA</h2>
-        <div class="cardprincipal">
-            <form>
-                <div class="row">
-                    <div class="meio">
-                        <label>Data do Evento:</label>
-                        <input type="date" />
-                    </div>
-                    <div class="meio">
-                        <label>Horário:</label>
-                        <input type="time" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="meio">
-                        <p>CERIMÔNIA</p>
-                        <button class="botao">(+)</button>
-
-                        <table>
-                        </table>
-                    </div>
-                    <div class="meio">
-                        <p>FESTA</p>
-                        <button class="botao">(+)</button>
-
-                        <table>
-                        </table>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-    </div>
-
-    <div class="formulario">
-        <h2>CONVIDADOS</h2>
-        <div class="cardprincipal">
-            <form>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Nome:</label>
-                            <input type="text" />
-                        </div>
-                        <div class="form-group">
-                            <label>Mesa:</label>
-                            <input type="number"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Telefone:</label>
-                            <input type="tel" />
-                        </div>
-                    </div>
-                    <div class="meio">
-                        <a class="btn botao2" href="/Convidados/Lista">Ver lista</a>
-                        <button class="btn botao2" type="submit">+</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-@*    
-    <div class="formulario">
-        <h2>FORNECEDOR</h2>
-        <div class="cardprincipal">
-            <form>
+    <h2>DADOS PESSOAIS</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
                 <div class="col-6-2">
-                    <div class="form-group">
+                    <div class="form-group-right">
+                        <label>Nome:</label>
+                        <input type="text" placeholder="*" />
+                    </div>
+                    <div class="form-group-right">
+                        <label>RG:</label>
+                        <input type="number" placeholder="*" />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Telefone:</label>
+                        <input type="tel" placeholder="*" />
+                    </div>
+                </div>
+                <div class="col-6-2">
+                    <div class="form-group-right">
+                        <label>Nome:</label>
+                        <input type="text" placeholder="*" />
+                    </div>
+                    <div class="form-group-right">
+                        <label>RG:</label>
+                        <input type="number" placeholder="*" />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Telefone</label>
+                        <input type="tel" placeholder="*" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h2>CRONOGRAMA</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2 form-group-center">
+                    <label>Data:</label>
+                    <input type="date" />
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <label>Horário:</label>
+                    <input type="time" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6-2 form-group-center">
+                    <p>CERIMÔNIA</p>
+                    <button class="drop">(+)</button>
+
+                    <table>
+                    </table>
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <p>FESTA</p>
+                    <button class="drop">(+)</button>
+
+                    <table>
+                    </table>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <h2>CONVIDADOS</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2">
+                    <div class="form-group-right">
                         <label>Nome:</label>
                         <input type="text" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group-right">
+                        <label>Mesa:</label>
+                        <input type="number"/>
+                    </div>
+                    <div class="form-group-right">
                         <label>Telefone:</label>
                         <input type="tel" />
                     </div>
-                    <div class="form-group">
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <div class="botoes">
+                        <div class="form-group-center">
+                            <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                        </div>
+                        <div class="form-group-center">
+                            <button class="botao" type="submit">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h2>FORNECEDOR</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2">
+                    <div class="form-group-right">
+                        <label>Nome:</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Telefone:</label>
+                        <input type="tel" />
+                    </div>
+                    <div class="form-group-right">
                         <label>Produto:</label>
                         <input type="text" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group-right">
                         <label>Descrição:</label>
                         <input type="text" />
                     </div>
                 </div>
-                <div class="col-6-2">
-                    <a class="botao2">Ver lista</a>
-                    <button type="submit">+</button>
+                <div class="col-6-2 form-group-center">
+                    <div class="botoes">
+                        <div class="form-group-center">
+                            <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                        </div>
+                        <div class="form-group-center">
+                            <button class="botao" type="submit">+</button>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>*@
+            </div>
+        </form>
+    </div>
 
-    <div class="formulario">
-        <button type="submit">CONCLUIR</button>
+    <div class="form-group-center">
+        <button class="botao_concluir" type="submit">CONCLUIR</button>
     </div>
 </div>   

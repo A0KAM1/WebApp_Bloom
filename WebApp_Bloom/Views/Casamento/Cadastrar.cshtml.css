@@ -1,25 +1,4 @@
-﻿.formulario{
-    margin-top: 5%;
-}
-p {
-    display: inline;
-    margin: 0;
-    height: fit-content;
-}
-button{
-    height: fit-content;
-}
-.botao{
-    background-color: transparent;
-    border: none;
-    display: inline;
-}
-h2{
-    text-align: center;
-    display: block;
-}
-
-/*Caminho de Rato*/
+﻿/*Caminho de Rato*/
 a {
     text-decoration: none;
     color: #ab595e;
@@ -29,19 +8,37 @@ a {
 a:hover {
     text-decoration-line: underline;
 }
-.row{
-    margin-bottom: 1%;
-}
+
+/*----------------------------------------*/
+
 .cardprincipal {
     background-color: #f3b6b6;
     border-radius: 30px;
     padding: 2%;
     margin-right: 0;
-
 }
 
-/*-------------------------------------------*/
+/*----------------------------------------*/
 
+h2{ /*não apagar*/
+    text-align: center;
+    display: block;
+    margin-top: 5%;
+}
+p {
+    display: inline;
+    margin: 0;
+    height: fit-content;
+}
+
+/*----------------------------------------*/
+
+.drop{
+    background-color: transparent;
+    border: none;
+    display: inline;
+    height: fit-content;
+}
 label{
     padding-right: 2%;
 }
@@ -51,28 +48,38 @@ input{
     height: fit-content;
     color: black;
 }
-
-/*-------------------------------------------*/
-
-.botao2{
-    background-color: white;
-
+.col-6-2{
+    width: 50%;
 }
-
-/*-------------------------------------------*/
-
-.col-6{
+.form-group-right{
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-bottom: 2%;
 }
-.meio{
-    width: 50%;
+.form-group-center{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2%;
 }
-.col-6-2{
+.botao{
+    background-color: white;
+    display: block;
+    border: 1px solid black;
     width: 50%;
-    display: inline;
+    text-align: center;
+    font-size: 23px;
+}
+.botoes{
+    width: 100%;
+}
+.botao_concluir {
+    border: none;
+    color: #ffeae5;
+    background-color: #ab595e;
+    border-radius: 30px;
+    padding: 1%;
+    margin-top: 5%;
+    width: 30%;
 }
