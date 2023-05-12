@@ -1,5 +1,127 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div>
+    <p>
+        <a href="/Home">Evento</a>
+        <a>></a>
+        <a>Cadastrar Aniversário</a>
+    </p>
+
+    <h2>DADOS PESSOAIS</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="form-group-right-2">
+                    <label>Nome:</label>
+                    <input type="text" placeholder="*" />
+                </div>
+                <div class="form-group-right-2">
+                    <label>RG:</label>
+                    <input type="number" placeholder="*" />
+                </div>
+                <div class="form-group-right-2">
+                    <label>Telefone:</label>
+                    <input type="tel" placeholder="*" />
+                </div>
+            </div>
+                
+        </form>
+    </div>
+
+    <h2>CRONOGRAMA</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2 form-group-center">
+                    <label>Data:</label>
+                    <input type="date" />
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <label>Horário:</label>
+                    <input type="time" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group-center">
+                    <p>FESTA</p>
+                    <button class="drop">(+)</button>
+
+                    <table>
+                    </table>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <h2>CONVIDADOS</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2">
+                    <div class="form-group-right">
+                        <label>Nome:</label>
+                        <input type="text" placeholder="*" required />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Mesa:</label>
+                        <input type="number" placeholder="*" required />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Telefone:</label>
+                        <input type="tel" />
+                    </div>
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <div class="botoes">
+                        <div class="form-group-center">
+                            <a class="botao">Ver lista</a>
+                        </div>
+                        <div class="form-group-center">
+                            <button class="botao" type="submit">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h2>FORNECEDOR</h2>
+    <div class="cardprincipal">
+        <form>
+            <div class="row">
+                <div class="col-6-2">
+                    <div class="form-group-right">
+                        <label>Nome:</label>
+                        <input type="text" placeholder="*" required />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Telefone:</label>
+                        <input type="tel" placeholder="*" required />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Produto:</label>
+                        <input type="text" placeholder="*" required />
+                    </div>
+                    <div class="form-group-right">
+                        <label>Descrição:</label>
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="col-6-2 form-group-center">
+                    <div class="botoes">
+                        <div class="form-group-center">
+                            <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                        </div>
+                        <div class="form-group-center">
+                            <button class="botao" type="submit">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-group-center">
+        <button class="botao_concluir" type="submit">CONCLUIR</button>
+    </div>
+</div>   
