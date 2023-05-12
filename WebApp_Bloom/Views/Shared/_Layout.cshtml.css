@@ -31,7 +31,20 @@ header{
     display: inline;
     border: none;
 }
+.f {
+    margin-top: 800px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.sair{
+    border: none;
+    border-radius:50px;
+    background-color: #c87377;
+    color: #ffeae5;
+    width: 120px;
 
+}
 /*sidebar escondida*/
 .sidebar {
     height: 100%;
