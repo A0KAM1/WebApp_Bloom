@@ -9,7 +9,7 @@ html {
   min-height: 100%;
 }
 
-@media {
+@media (min-{
   html {
     font-size: 23px;
   }
