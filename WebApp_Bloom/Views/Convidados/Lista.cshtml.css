@@ -141,3 +141,11 @@ textarea:focus, input:focus, select:focus {
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+.concluir {
+    border: none;
+    color: #ffeae5;
+    background-color: #ab595e;
+    border-radius: 30px;
+    width: 150px;
+    margin-left: 760px;
+}
