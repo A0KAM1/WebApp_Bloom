@@ -1,6 +1,7 @@
 * {
     font-family: 'Open Sans', sans-serif;
     color: #ab595e;
+    background-color: #ffeae5;
 }
 
 html {
@@ -9,7 +10,7 @@ html {
   min-height: 100%;
 }
 
-@media (min-{
+@media (min-height: 768px){
   html {
     font-size: 23px;
   }
