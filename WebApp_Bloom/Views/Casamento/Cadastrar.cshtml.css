@@ -46,24 +46,30 @@ label{
     padding-right: 2%;
 }
 input{
-    border: 1px solid black;
     width: 65%;
-    color: black;
 }
 .col-6-2{
     width: 50%;
 }
-.form-group-right{
+.form-group-right {
     display: flex;
     justify-content: end;
-    margin-bottom: 2%;
+    align-items: start;
+    padding: 1%;
 }
+.caixa {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
 .form-group-center{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2%;
+    padding: 1%;
 }
+
 .botao{
     background-color: white;
     display: block;
@@ -84,15 +90,13 @@ input{
     margin-top: 5%;
     width: 30%;
 }
-.caixa {
-    display: flex;
-    justify-content: end;
-    align-items: start;
-    margin-bottom: 2%;
-}
+
 textarea{
     height: 150px;
     border: 1px solid;
     color: black;
     width: 65%;
+}
+table{
+    color: black;
 }

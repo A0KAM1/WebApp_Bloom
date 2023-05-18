@@ -61,36 +61,26 @@
             <div class="row">
                 <div class="col-6-2 form-group-center">
                     <p>CERIMÔNIA</p>
-                    <button class="add-row">(+)</button> 
+                    <button class="drop" type="button" onclick="myFunction()">(+)</button> 
 
 
                 </div>
                 <div class="col-6-2 form-group-center">
                     <p>FESTA</p>
-                    <button class="drop">(+)</button>
-
-                    <table>
-                    </table>
+                    <button type="button" class="drop" onclick="myFunction1()">(+)</button>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-6-2 form-group-center">
-                    <table id="test">
+                <div class="col-6-2 caixa">
+                    <table id="myTable">
                         <tbody>
-                            <tr>
-                                <td>text 1</td>
-                                <td>text 2</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-6-2 form-group-center">
-                    <table id="test">
+                <div class="col-6-2 caixa">
+                    <table id="myTable1">
                         <tbody>
-                            <tr>
-                                <td>text 1</td>
-                                <td>text 2</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -149,7 +139,7 @@
                         <label>Produto:</label>
                         <input type="text" placeholder="*" required/>
                     </div>
-                    <div class="caixa">
+                    <div class="form-group-right">
                         <label>Descrição:</label>
                         <textarea></textarea>
                     </div>
@@ -175,7 +165,23 @@
 
 
 <script type="text/javascript">
-    $transition - collapse:         height .35s ease;
+
+    function myFunction() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "<input type='time'/>";
+        cell2.innerHTML = "<input type='text'/>";
+    }
+    function myFunction1() {
+        var table = document.getElementById("myTable1");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "<input type='time'/>";
+        cell2.innerHTML = "<input type='text'/>";
+    }
 
     $(document).ready(function (){
         $('#telefone').mask('(00) 00000-0000');

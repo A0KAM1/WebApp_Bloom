@@ -3,6 +3,10 @@
     color: #ab595e;
 }
 
+input{
+    color: black;
+}
+
 html {
   font-size: 18px;
   position: relative;
