@@ -61,10 +61,19 @@
             <div class="row">
                 <div class="col-6-2 form-group-center">
                     <p>CERIMÔNIA</p>
-                    <button class="drop">(+)</button>
-
-                    <table>
-                    </table>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">(+)</button>
+                    <div class="collapse" id="collapseExample">
+                        <form method="post">
+                            <table>
+                                <tbody>
+                                    <td><input type="time"/></td>
+                                    <td><input type="text"/></td>
+                                </tbody>
+                            </table>
+                        </form>
+                        
+                    </div>
+                    
                 </div>
                 <div class="col-6-2 form-group-center">
                     <p>FESTA</p>
@@ -127,9 +136,9 @@
                         <label>Produto:</label>
                         <input type="text" placeholder="*" required/>
                     </div>
-                    <div class="form-group-right">
+                    <div class="caixa">
                         <label>Descrição:</label>
-                        <input type="text" />
+                        <textarea></textarea>
                     </div>
                 </div>
                 <div class="col-6-2 form-group-center">
@@ -153,6 +162,8 @@
 
 
 <script type="text/javascript">
+    $transition - collapse:         height .35s ease;
+
     $(document).ready(function (){
         $('#telefone').mask('(00) 00000-0000');
         $('#telefone1').mask('(00) 00000-0000');

@@ -48,7 +48,6 @@ label{
 input{
     border: 1px solid black;
     width: 65%;
-    height: fit-content;
     color: black;
 }
 .col-6-2{
@@ -57,7 +56,6 @@ input{
 .form-group-right{
     display: flex;
     justify-content: end;
-    align-items: center;
     margin-bottom: 2%;
 }
 .form-group-center{
@@ -85,4 +83,16 @@ input{
     padding: 1%;
     margin-top: 5%;
     width: 30%;
+}
+.caixa {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    margin-bottom: 2%;
+}
+textarea{
+    height: 150px;
+    border: 1px solid;
+    color: black;
+    width: 65%;
 }
