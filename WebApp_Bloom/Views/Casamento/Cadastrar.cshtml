@@ -7,7 +7,7 @@
         <a>></a>
         <a>Cadastrar Casamento</a>
     </p>
-
+    
     <h2>DADOS PESSOAIS</h2>
     <div class="cardprincipal">
         <form>
@@ -15,7 +15,7 @@
                 <div class="col-6-2">
                     <div class="form-group-right">
                         <label>Nome:</label>
-                        <input type="text" placeholder="*" />
+                        <input type="text" placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="form-group-right">
                         <label for="txtrg">RG:</label>
@@ -29,7 +29,7 @@
                 <div class="col-6-2">
                     <div class="form-group-right">
                         <label>Nome:</label>
-                        <input type="text" placeholder="*" />
+                        <input type="text" placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="form-group-right">
                         <label for="txtrg">RG:</label>
@@ -85,7 +85,7 @@
                 <div class="col-6-2">
                     <div class="form-group-right">
                         <label>Nome:</label>
-                        <input type="text" placeholder="*" required/>
+                        <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="form-group-right">
                         <label>Mesa:</label>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="form-group-right">
                         <label>Telefone:</label>
-                        <input type="tel" />
+                        <input type="tel" id="telefone2" name="telefone2" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
                     </div>
                 </div>
                 <div class="col-6-2 form-group-center">
@@ -117,11 +117,11 @@
                 <div class="col-6-2">
                     <div class="form-group-right">
                         <label>Nome:</label>
-                        <input type="text" placeholder="*" required/>
+                        <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="form-group-right">
                         <label>Telefone:</label>
-                        <input type="tel" placeholder="*" required/>
+                        <input type="tel" placeholder="*" required id="telefone3" name="telefone3" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
                     </div>
                     <div class="form-group-right">
                         <label>Produto:</label>
@@ -156,7 +156,32 @@
     $(document).ready(function (){
         $('#telefone').mask('(00) 00000-0000');
         $('#telefone1').mask('(00) 00000-0000');
+        $('#telefone2').mask('(00) 00000-0000');
+        $('#telefone3').mask('(00) 00000-0000');
         $('#rg').mask('00.000.000-0');
         $('#rg1').mask('00.000.000-0');
     });  
+
+    function ApenasLetras(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            } else if (e) {
+                var charCode = e.which;
+            } else {
+                return true;
+            }
+            if (
+                (charCode > 64 && charCode < 91) ||
+                (charCode > 96 && charCode < 123) ||
+                (charCode > 191 && charCode <= 255) // letras com acentos
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (err) {
+            alert(err.Description);
+        }
+    }
 </script>
