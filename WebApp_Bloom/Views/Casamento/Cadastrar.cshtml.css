@@ -48,9 +48,6 @@ label{
 input{
     width: 65%;
 }
-.col-6-2{
-    width: 50%;
-}
 .form-group-right {
     display: flex;
     justify-content: end;
