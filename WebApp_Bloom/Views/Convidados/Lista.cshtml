@@ -27,7 +27,18 @@
                 </table>
             </form>
             <label>TOTAL</label>
-            <input class="total" type="number" />
+            <input id="total" class="total" type="number" readonly/>
             <button class="concluir">CONCLUIR</button>
         </div>
 </div>
+
+<script>
+    document.ready(function () {
+        var tabela = document.getElementById('myTable').length;
+        for(var i=0; i<=tabela;i++){
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            alert(checkboxes.length);
+            document.getElementById('total').value(checkboxes.length);
+        }
+    });
+</script>

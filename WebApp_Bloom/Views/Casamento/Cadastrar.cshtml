@@ -61,25 +61,23 @@
             <div class="row">
                 <div class="col form-group-center">
                     <p>CERIMÔNIA</p>
-                    <button class="drop" type="button" onclick="myFunction()">(+)</button> 
-
-
+                    <button class="drop" type="button" onclick="AddRowCerimonia()">(+)</button>
                 </div>
                 <div class="col form-group-center">
                     <p>FESTA</p>
-                    <button type="button" class="drop" onclick="myFunction1()">(+)</button>
+                    <button type="button" class="drop" onclick="AddRowFesta()">(+)</button>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col caixa">
-                    <table id="myTable">
+                    <table id="tableCerimonia">
                         <tbody>
                         </tbody>
                     </table>
                 </div>
                 <div class="col caixa">
-                    <table id="myTable1">
+                    <table id="tableFesta">
                         <tbody>
                         </tbody>
                     </table>
@@ -114,7 +112,7 @@
                             <a class="botao" href="/Convidados/Lista">Ver lista</a>
                         </div>
                         <div class="form-group-center">
-                            <button class="botao" type="submit">+</button>
+                            <button action="/Convidados/SalvarDados" class="botao" type="submit">+</button>
                         </div>
                     </div>
                 </div>
@@ -166,16 +164,16 @@
 
 <script type="text/javascript">
 
-    function myFunction() {
-        var table = document.getElementById("myTable");
+    function AddRowCerimonia() {
+        var table = document.getElementById("tableCerimonia");
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         cell1.innerHTML = "<input type='time'/>";
         cell2.innerHTML = "<input type='text'/>";
     }
-    function myFunction1() {
-        var table = document.getElementById("myTable1");
+    function AddRowFesta() {
+        var table = document.getElementById("tableFesta");
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
