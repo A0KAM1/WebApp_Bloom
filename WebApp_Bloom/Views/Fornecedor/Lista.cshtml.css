@@ -1,0 +1,63 @@
+﻿.title {
+    color: #ab595e;
+    font-size: 30px;
+}
+/*Caminho de Rato*/
+.migalha {
+    text-decoration: none;
+    color: #ab595e;
+    font-size: 14px;
+}
+/*Indicacao de botao no caminho de rato*/
+migalha:hover {
+    text-decoration-line: underline;
+}
+
+h2 {
+    text-align: center;
+}
+
+.imagem {
+    width: 400px;
+    height: 400px;
+}
+
+.cardprincipal {
+    background-color: #f3b6b6;
+    border-radius: 30px;
+}
+
+.botao_buscar {
+    border: 1px solid;
+    height: 45px;
+    border-radius: 50px;
+    width: fit-content;
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+.botao {
+    background-color: transparent;
+    border: none;
+}
+
+.letra {
+    color: black;
+}
+.botao_tabela {
+    border: none;
+    color: #ffeae5;
+    background-color: #ab595e;
+    border-radius: 30px;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+}
