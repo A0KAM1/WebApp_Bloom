@@ -3,18 +3,14 @@
     font-size: 30px;
 }
 /*Caminho de Rato*/
-a {
+.migalha{
     text-decoration: none;
     color: #ab595e;
     font-size:14px;
 }
 /*Indicacao de botao no caminho de rato*/
-a:hover {
+migalha:hover {
     text-decoration-line: underline;
-}
-.caminho{
-    font-size:12px;
-    display: inline;
 }
 h2{
     text-align: center;
@@ -146,6 +142,16 @@ input[type=number]::-webkit-inner-spin-button {
     color: #ffeae5;
     background-color: #ab595e;
     border-radius: 30px;
-    width: 150px;
+    width: 160px;
     margin-left: 760px;
+}
+.botao_tabela {
+    border: none;
+    color: #ffeae5;
+    background-color: #ab595e;
+    border-radius: 30px;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
 }

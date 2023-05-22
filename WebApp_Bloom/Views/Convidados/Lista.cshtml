@@ -1,20 +1,21 @@
 ﻿<div class="row">
-    <p><a href="/Home">Evento</a><a>></a><a href="/Casamento/Cadastrar">Cadastrar Casamento</a><a>></a><a>Convidados Casamento</a></p>
+    <p><a class="migalha" href="/Home">Evento</a><a class="migalha">></a><a class="migalha" href="/Casamento/Cadastrar">Cadastrar Casamento</a><a class="migalha">></a><a class="migalha">Convidados Casamento</a></p>
     <h2>CONVIDADOS CASAMENTO</h2>
         <div class=" card-body cardprincipal">
             <div class="botao_buscar">
                 <button class="botao">
                     <img  style="width: 40px; height: 40px;" src="~/css/pesquisar.png" />
                 </button>
-                <input  id="myInput" type="text" />
+                <input  type="text" />
             </div>
             <form>
-                <table id="myTable" class="table table-striped">
+                <table  class="table table-striped">
                     <thead>
                         <tr>
                             <th style="width: 5%"></th>
-                            <th style="width: 70%"></th>
-                            <th style="width: 25%">MESA</th>
+                            <th style="width: 60%"></th>
+                            <th style="width: 15%">MESA</th>
+                            <th style="width: 20%"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,6 +23,7 @@
                         <td><label class="quadrado"><input type="checkbox" /><span class="checkmark"></span></label></td>
                             <td class="letra">Teste</td>
                             <td><input class="mesa" type="number" value="1"></input></td>
+                        <td><a id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">    Editar</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -32,3 +34,5 @@
         </div>
 </div>
 
+<script>
+</script>
