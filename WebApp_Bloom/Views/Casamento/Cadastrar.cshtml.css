@@ -1,7 +1,4 @@
-﻿html {
-    background-color: #ffeae5;
-}
-/*Migalha de Pão*/
+﻿/*Migalha de Pão*/
 a {
     text-decoration: none;
     color: #ab595e;
@@ -33,6 +30,19 @@ p {
     margin: 0;
     height: fit-content;
 }
+.botoes {
+    width: 100%;
+}
+
+input {
+    width: 65%;
+}
+textarea {
+    height: 150px;
+    border: 1px solid;
+    color: black;
+    width: 65%;
+}
 
 /*----------------------------------------*/
 
@@ -45,9 +55,7 @@ p {
 label{
     padding-right: 2%;
 }
-input{
-    width: 65%;
-}
+
 .form-group-right {
     display: flex;
     justify-content: end;
@@ -75,9 +83,7 @@ input{
     text-align: center;
     font-size: 23px;
 }
-.botoes{
-    width: 100%;
-}
+
 .botao_concluir {
     border: none;
     color: #ffeae5;
@@ -87,17 +93,6 @@ input{
     margin-top: 5%;
     width: 30%;
 }
-
-textarea{
-    height: 150px;
-    border: 1px solid;
-    color: black;
-    width: 65%;
-}
-table{
-    color: black;
-}
-
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;

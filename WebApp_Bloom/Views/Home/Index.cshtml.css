@@ -1,0 +1,41 @@
+﻿.botao_buscar {
+    border: 1px solid;
+    height: 45px;
+    border-radius: 50px;
+    width: fit-content;
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.botao {
+    background-color: transparent;
+    border: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+.card{
+    border: none;
+    background-color: #f3b6b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 30px;
+    padding: 2%;
+}
+
+.btn-concluir {
+    background-color: #ab595e;
+    height: 10%;
+    border-radius: 30px;
+    border: none;
+    color: #f3b6b6;
+}

@@ -8,5 +8,9 @@ namespace WebApp_Bloom.Controllers
         {
             return View();
         }
+        public IActionResult Editar()
+        {
+            return View();
+        }
     }
 }
