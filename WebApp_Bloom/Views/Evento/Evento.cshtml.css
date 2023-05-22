@@ -1,4 +1,6 @@
-﻿.botao_buscar {
+﻿/*-------------------- input datalist busca --------------------*/
+
+.botao_buscar {
     border: 1px solid;
     height: 45px;
     border-radius: 50px;
@@ -7,11 +9,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 0;
 }
 
-.botao {
+/*-------------------------------------------------------------*/
+
+button{
     background-color: transparent;
     border: none;
 }
@@ -24,18 +26,27 @@ input {
 .card{
     border: none;
     background-color: #f3b6b6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+    width: fit-content;
     border-radius: 30px;
-    padding: 2%;
+    padding: 6%;
+    margin: 0 auto;
 }
 
 .btn-concluir {
     background-color: #ab595e;
-    height: 10%;
     border-radius: 30px;
     border: none;
-    color: #f3b6b6;
+    color: #ffeae5;
+    text-decoration: none;
+    padding: 3%;
+    font-size: 14px;
+    width: 5%;
+}
+
+.carousel-control-prev{
+    justify-content: start;
+}
+
+.carousel-control-next{
+    justify-content: end;
 }

@@ -1,11 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-@font-face {
-    font-family: ["Open Sans"];
-    src: https://fonts.google.com/specimen/Open+Sans;
-}
-
 header{
     display: flex;
     top: 0;
@@ -16,19 +11,12 @@ header{
     background-color: #f3b6b6;
     display:flex;
 }
-.navbar-header {
-    padding: 3px; /*opcional*/
-    text-align: center;
-    width: 20%;
-    margin: 0 auto;
-    float: none;
-    position: relative;
-    left: -2%;
-}
-.hamburguer{
+button{
     background-color:transparent;
-    display: inline;
     border: none;
+}
+.container{
+    width: 90%;
 }
 .f {
     width: 100%;
@@ -94,9 +82,9 @@ header{
         padding-top: 15px;
     }
 
-        .sidebar a {
-            font-size: 18px;
-        }
+    .sidebar a {
+        font-size: 18px;
+    }
 }
 
 .dropbtn {

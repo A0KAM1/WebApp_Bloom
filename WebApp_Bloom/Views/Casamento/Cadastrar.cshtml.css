@@ -1,4 +1,5 @@
 ﻿/*Migalha de Pão*/
+
 a {
     text-decoration: none;
     color: #ab595e;
@@ -15,14 +16,12 @@ a:hover {
     background-color: #f3b6b6;
     border-radius: 30px;
     padding: 2%;
-    margin-right: 0;
 }
 
 /*----------------------------------------*/
 
 h2{ /*não apagar*/
     text-align: center;
-    display: block;
     margin-top: 5%;
 }
 p {

@@ -4,11 +4,11 @@ using WebApp_Bloom.Models;
 
 namespace WebApp_Bloom.Controllers
 {
-    public class HomeController : Controller
+    public class EventoController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<EventoController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public EventoController(ILogger<EventoController> logger)
         {
             _logger = logger;
         }
@@ -17,6 +17,11 @@ namespace WebApp_Bloom.Controllers
         {
             return View();
         }
+        public IActionResult Evento()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

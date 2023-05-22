@@ -1,3 +1,7 @@
+@font-face {
+    font-family: ["Open Sans"];
+    src: https://fonts.google.com/specimen/Open+Sans;
+}
 * {
     font-family: 'Open Sans', sans-serif;
     color: #ab595e;
@@ -22,6 +26,7 @@ html {
 body {
   background-color: #ffeae5;
   height: 100vh;
+  width: 100vw;
 }
 
 #divBusca {
