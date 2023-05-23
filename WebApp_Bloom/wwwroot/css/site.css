@@ -54,3 +54,11 @@ body {
     height: 48px;
     width: 280px;
 }
+
+#lixo {
+    background-color: transparent;
+    border: none;
+}
+#lixo:hover{
+    cursor: pointer;
+}
