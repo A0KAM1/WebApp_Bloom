@@ -38,7 +38,7 @@ h2 {
     align-items: center;
 }
 
-input {
+.campo {
     background-color: transparent;
     border: none;
 }
@@ -60,4 +60,14 @@ input {
     text-align: center;
     text-decoration: none;
     display: flex;
+}
+.salvar {
+    background-color: #ab595e;
+    color: #ffeae5;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0;
+    border: none;
+    outline: 0;
+    color: black;
 }

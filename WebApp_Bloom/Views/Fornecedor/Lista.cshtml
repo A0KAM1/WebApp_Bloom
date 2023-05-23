@@ -1,4 +1,7 @@
-﻿<div class="row">
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+<div class="row">
     <p><a class="migalha" href="/Evento">Evento</a><a class="migalha">></a><a class="migalha" href="/Casamento/Cadastrar">Cadastrar Casamento</a><a class="migalha">></a><a class="migalha">Fornecedor Casamento</a></p>
     <h2>FORNECEDOR CASAMENTO</h2>
     <div class=" card-body cardprincipal">
@@ -6,7 +9,7 @@
             <button class="botao">
                 <img style="width: 40px; height: 40px;" src="~/css/pesquisar.png" />
             </button>
-            <input type="text" />
+            <input class="campo" type="text" />
         </div>
         <form>
             <table class="table table-striped">
@@ -23,13 +26,74 @@
                         <td class="letra">Teste</td>
                         <td class="letra">Produto</td>
                         <td class="letra">Descrição</td>
-                        <td><a id="editar" class="justify-content-center botao_tabela" href="/Fornecedor/Editar">Editar</a></td>
+                        <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela">Editar</button></td>
                     </tr>
                 </tbody>
             </table>
         </form>
     </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Fornecedor</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input class="form-control" name="telefone" id="telefone" required pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="produto" class="col-form-label">Produto:</label>
+                        <input type="text" class="form-control" id="produto" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricao" class="col-form-label">Descrição:</label>
+                        <textarea class="form-control" id="descricao" required ></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn salvar" formaction="/Fornecedor/SalvarDados">Salvar</button>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('#telefone').mask('(00) 00000-0000');
+                $('#telefone1').mask('(00) 00000-0000');
+                $('#telefone2').mask('(00) 00000-0000');
+                $('#telefone3').mask('(00) 00000-0000');
+                $('#rg').mask('00.000.000-0');
+                $('#rg1').mask('00.000.000-0');
+            });
 
-<script>
-</script>
+            function ApenasLetras(e, t) {
+                try {
+                    if (window.event) {
+                        var charCode = window.event.keyCode;
+                    } else if (e) {
+                        var charCode = e.which;
+                    } else {
+                        return true;
+                    }
+                    if (
+                        (charCode > 64 && charCode < 91) ||
+                        (charCode > 96 && charCode < 123) ||
+                        (charCode > 191 && charCode <= 255) // letras com acentos
+                    ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } catch (err) {
+                    alert(err.Description);
+                }
+            }
+        </script>
