@@ -29,8 +29,9 @@ input {
     background-color: #f3b6b6;
     width: fit-content;
     border-radius: 30px;
-    padding: 6%;
     margin: 0 auto;
+    --bs-gutter-y: 1 rem;
+    padding: 2%;
 }
 
 .btn-concluir {
@@ -39,28 +40,27 @@ input {
     border: none;
     color: #ffeae5;
     text-decoration: none;
-    padding: 3%;
-    font-size: 14px;
+    padding: 5%;
     width: 5%;
 }
 
-/*.carousel-inner{
-    position: static;
-    display: flex;
+.carousel-inner{
+    padding: 2%;
 }
 
-.carousel-control-next, .carousel-control-next{
-    display: inline;
-    margin: 0 0;
-    width: fit-content;
+.carousel {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+    overflow: hidden;
+}
+
+.carousel-control-prev, .carousel-control-next {
     position: static;
     z-index: 0;
-}*/
-
-.carousel-control-prev{
-    justify-content: start;
-}
-
-.carousel-control-next{
-    justify-content: end;
+    display: inline;
+    width: fit-content;
+    margin: 0 0;
 }
