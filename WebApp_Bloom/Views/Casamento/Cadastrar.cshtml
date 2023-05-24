@@ -167,50 +167,11 @@
         </div>
     </div>
 </div>
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="Error" class="toast Erro" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <button type="button" class="btn-close justify-content-end" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            Erro, os dados não poderam ser salvos.
-        </div>
-    </div>
-</div>
 
 <script type="text/javascript">
         
-        function botao_salvar(){
-        var form = document.getElementById("form_dados");
-        var nome1 = document.getElementById("nome").value;
-        var nome2 = document.getElementById("nome1").value;
-        var rg1 = document.getElementById("rg").value;
-        var rg2 = document.getElementById("rg1").value;
-        var tel1 = document.getElementById("telefone").value;
-        var tel2 = document.getElementById("telefone1").value;
-            if(nome1 != null || tel1 != null || rg1 != null){
             const toastTrigger = document.getElementById('liveToastBtn')
             const toastLiveExample = document.getElementById('liveToast')
-
-            if (toastTrigger) {
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                toastTrigger.addEventListener('click', () => {
-                    toastBootstrap.show()
-                })
-            }
-           }else if(nome2 != null || tel2 != null || rg2 != null){
-            const toastTrigger = document.getElementById('liveToastBtn')
-            const toastLiveExample = document.getElementById('liveToast')
-
-            if (toastTrigger) {
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                toastTrigger.addEventListener('click', () => {
-                    toastBootstrap.show()
-                })
-            }
-            }else{
-            const toastTrigger = document.getElementById('liveToastBtn')
-            const toastLiveExample = document.getElementById('Error')
 
             if (toastTrigger) {
                 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
@@ -222,9 +183,6 @@
             
         }
         
-
-    
-
     function AddRowCerimonia() {
         var table = document.getElementById("tableCerimonia");
         var row = table.insertRow();
