@@ -31,5 +31,6 @@ namespace WebApp_Bloom.Controllers
             db.SaveChanges();
             return RedirectToAction("Cadastrar", "Casamento");
         }
+        
     }
 }
