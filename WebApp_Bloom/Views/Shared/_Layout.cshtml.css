@@ -135,3 +135,26 @@ button{
 .dropdown:hover .dropdown-content {
     display: inline;
 }
+
+.btn-outline-dark {
+    position: fixed;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #ab595e;
+    color: #ab595e;
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+    object-position:center;
+}
+.btn-outline-dark:hover{
+    background-color: #ab595e;
+    color: #ffeae5;
+}
+
+.divFAQ{
+    position: fixed;
+    bottom: 12%;
+    right: 6%;
+}

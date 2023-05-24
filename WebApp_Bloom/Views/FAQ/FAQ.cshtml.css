@@ -1,0 +1,9 @@
+﻿.botao_pergunta{
+    background-color: transparent;
+    border: none;
+    color: #ab595e;
+}
+.botao_pergunta:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
