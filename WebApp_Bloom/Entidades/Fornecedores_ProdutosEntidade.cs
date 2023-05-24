@@ -7,5 +7,6 @@
         public long ProdutoId { get; set; }
         public ProdutoEntidade Produto { get; set; }
         public FornecedorEntidade Fornecedor { get; set; }
+
     }
 }

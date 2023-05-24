@@ -11,5 +11,10 @@ namespace WebApp_Bloom
         }
 
         public DbSet<FornecedorEntidade> FORNECEDORES { get; set; }
+        public DbSet<Fornecedores_ProdutosEntidade> FORNECEDORES_PRODUTOS { get; set; }
+        public DbSet<ConvidadosEntidade> CONVIDADOS { get; set; }
+        public DbSet<CasamentoEntidade> CASAMENTOS { get; set; }
+        public DbSet<PessoaEntidade> PESSOAS { get; set; }
+
     }
 }

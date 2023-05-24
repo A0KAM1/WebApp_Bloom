@@ -8,5 +8,7 @@
     cursor: pointer;
 }
 .caixa_resposta{
-    display:block;
+    background-color: #f3b6b6;
+    padding: 1%;
+    border-radius: 30px;
 }

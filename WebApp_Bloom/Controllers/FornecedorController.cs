@@ -6,9 +6,9 @@ namespace WebApp_Bloom.Controllers
     public class FornecedorController : Controller
     {
         private Contexto db;
-        public FornecedorController(Contexto contexto)
+        public FornecedorController(Contexto opt)
         {
-            db = contexto;
+            db = opt;
         }
 
         public IActionResult Lista()
@@ -24,6 +24,12 @@ namespace WebApp_Bloom.Controllers
             {
                 return RedirectToAction("Lista");
             }
+        }
+        public IActionResult SalvarDados(FornecedorEntidade dados)
+        {
+            db.FORNECEDORES.Add(dados);
+            db.SaveChanges();
+            return RedirectToAction("/Casamento/Cadastrar");
         }
     }
 }

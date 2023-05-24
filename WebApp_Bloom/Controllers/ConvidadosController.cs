@@ -5,7 +5,11 @@ namespace WebApp_Bloom.Controllers
 {
     public class ConvidadosController : Controller
     {
-        
+        public Contexto db;
+        public ConvidadosController(Contexto opt)
+        {
+            db = opt;
+        }
         public IActionResult Lista()
         {
             return View();
@@ -20,6 +24,12 @@ namespace WebApp_Bloom.Controllers
             {
                 return RedirectToAction("Lista");
             }
+        }
+        public IActionResult SalvarDados(ConvidadosEntidade dados)
+        {
+            db.CONVIDADOS.Add(dados);
+            db.SaveChanges();
+            return RedirectToAction("/Casamento/Cadastrar");
         }
     }
 }
