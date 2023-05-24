@@ -23,10 +23,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <td><label class="quadrado"><input id="checkbox" type="checkbox" /><span class="checkmark"></span></label></td>
+                        <td><label class="quadrado"><input id="select" type="checkbox" /><span class="checkmark"></span></label></td>
                             <td class="letra">Teste</td>
                             <td><input class="campo mesa" type="number" value="1"></input></td>
                         <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td><label class="quadrado"><input id="select1" type="checkbox" /><span class="checkmark"></span></label></td>
+                            <td class="letra">Teste</td>
+                            <td><input class="campo mesa" type="number" value="1"></input></td>
+                            <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -66,21 +72,14 @@
         </div>
         </div>
 <script>
-            
-           
-            function(){
-                var table = document.getElementById("tableConvidados");
-                var total = document.getElementById("total");
-                var i = (table.rows.lenght) - 1;
-                var check = document.getElementById("checkbox");
-                for (var j = 0; j <= i; j++) {
-                    if (check.ariaChecked() == true) {
-                        var i++;
-                        alert(i);
-                        total.value() = i;
-                    }
-                }
-            }
+
+
+            $(document).ready(function () {
+                $('input[type="checkbox"]').click(function () {
+                    var checkboxes = $('input:checkbox:checked').length;
+                    $('#total').val(checkboxes);
+                })
+            });
 
             $(document).ready(function () {
                 $('#telefone').mask('(00) 00000-0000');

@@ -7,3 +7,6 @@
     text-decoration: underline;
     cursor: pointer;
 }
+.caixa_resposta{
+    display:block;
+}
