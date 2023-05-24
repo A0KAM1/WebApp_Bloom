@@ -11,9 +11,7 @@
     align-items: center;
 }
 
-/*-------------------------------------------------------------*/
-
-button{
+button {
     background-color: transparent;
     border: none;
     margin: 0 0;
@@ -22,6 +20,12 @@ button{
 input {
     background-color: transparent;
     border: none;
+}
+
+/*-------------------------------------------------------------*/
+
+h4{
+    margin-bottom: 0;
 }
 
 .card{
@@ -44,10 +48,6 @@ input {
     width: 5%;
 }
 
-.carousel-inner{
-    padding: 2%;
-}
-
 .carousel {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
@@ -63,4 +63,5 @@ input {
     display: inline;
     width: fit-content;
     margin: 0 0;
+    padding: 2%;
 }
