@@ -29,7 +29,7 @@ namespace WebApp_Bloom.Controllers
         {
             db.FORNECEDORES.Add(dados);
             db.SaveChanges();
-            return RedirectToAction("/Casamento/Cadastrar");
+            return RedirectToAction("Cadastrar", "Casamento");
         }
     }
 }

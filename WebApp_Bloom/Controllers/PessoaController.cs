@@ -18,7 +18,7 @@ namespace WebApp_Bloom.Controllers
         {
             db.PESSOAS.Add(dados);
             db.SaveChanges();
-            return RedirectToAction("/Casamento/Cadastrar");
+            return RedirectToAction("Cadastrar","Casamento");
         }
     }
 }
