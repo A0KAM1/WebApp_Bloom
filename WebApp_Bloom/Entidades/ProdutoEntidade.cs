@@ -1,9 +1,8 @@
 ﻿namespace WebApp_Bloom.Entidades
 {
-    public class FornecedorEntidade
+    public class ProdutoEntidade
     {
-        public int Id { get; set; }
-        
+        public long Id { get; set; }
         public string Descricao { get; set; }
     }
 }

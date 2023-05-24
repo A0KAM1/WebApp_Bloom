@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using WebApp_Bloom;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Contexto>(option =>
+
+option.UseSqlServer("Server=201.55.32.20;Database=BLOOM;User Id=pw_tarde;Password=aluno123;"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
