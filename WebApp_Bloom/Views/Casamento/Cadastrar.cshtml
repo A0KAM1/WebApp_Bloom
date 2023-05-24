@@ -4,43 +4,64 @@
     <a>Cadastrar Casamento</a>
 </p>
 
-<h2>DADOS PESSOAIS</h2>
+<h2 class="mt-5 text-center">DADOS PESSOAIS</h2>
 <div class="cardprincipal">
     <form>
         <div class="row">
-            <div class="col">
+            <div class="col inputs">
                 <div class="form-group-right">
                     <label>Nome:</label>
                     <input id="nome" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
                 <div class="form-group-right">
-                    <label>RG:</label>
-                    <input type="text" required placeholder="*" id="rg" name="rg" pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}"/>
-                </div>
-                <div class="form-group-right">
-                    <label>Telefone:</label>
-                    <input type="tel" required placeholder="*" id="telefone" name="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group-right">
                     <label>Nome:</label>
                     <input id="nome1" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
-                <div class="form-group-right">
-                    <label>RG:</label>
-                    <input type="text" required name="rg1" id="rg1" placeholder="*" pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
-                </div>
-                <div class="form-group-right">
-                    <label>Telefone:</label>
-                    <input type="tel" required placeholder="*" id="telefone1" name="telefone1" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
+            </div>
+            <div class="col form-group-center">
+                <div class="seila">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pessoa" class="justify-content-center botao">Cadastrar Cliente</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+<div class="modal fade" id="pessoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="rg" class="col-form-label">RG:</label>
+                        <input type="text" class="form-control" name="rg" id="rg" required pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="tel" class="form-control" name="telefone" id="telefone" required pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">E-mail:</label>
+                        <input type="email" class="form-control" name="email" required />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn salvar" formaction="/Pessoa/SalvarDados">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>CRONOGRAMA</h2>
+<h2 class="mt-5 text-center">CRONOGRAMA</h2>
 <div class="cardprincipal">
     <form>
         <div class="row">
@@ -86,7 +107,7 @@
 
 </div>
 
-<h2>CONVIDADOS</h2>
+<h2 class="mt-5 text-center">CONVIDADOS</h2>
 <div class="cardprincipal">
     <form>
         <div class="row">
@@ -99,10 +120,6 @@
                     <label>Mesa:</label>
                     <input type="number" placeholder="*" required/>
                 </div>
-                <div class="form-group-right">
-                    <label>Telefone:</label>
-                    <input type="tel" id="telefone2" name="telefone2" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required/>
-                </div>
             </div>
             <div class="col form-group-center">
                 <div class="botoes">
@@ -112,13 +129,16 @@
                     <div class="form-group-center">
                         <button action="/Convidados/SalvarDados" class="botao" type="submit">+</button>
                     </div>
+                    <div class="form-group-center">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Convidados</button>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
 </div>
 
-<h2>FORNECEDOR</h2>
+<h2 class="mt-5 text-center">FORNECEDOR</h2>
 <div class="cardprincipal">
     <form>
         <div class="row">
@@ -126,10 +146,6 @@
                 <div class="form-group-right">
                     <label>Nome:</label>
                     <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
-                </div>
-                <div class="form-group-right">
-                    <label>Telefone:</label>
-                    <input type="tel" placeholder="*" required id="telefone3" name="telefone3" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
                 </div>
                 <div class="form-group-right">
                     <label>Produto:</label>
@@ -148,15 +164,19 @@
                     <div class="form-group-center">
                         <button class="botao" type="submit">+</button>
                     </div>
+                    <div class="form-group-center">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Fornecedor</button>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
 </div>
 
-    <div class="form-group-center">
+<div class="form-group-center">
     <button class="botao_concluir" type="submit" formaction="/Casamento/SalvarDados" id="liveToastBtn" onclick="botao_salvar()">CONCLUIR</button>
     </div>
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header justify-content-end">
@@ -169,19 +189,8 @@
 </div>
 
 <script type="text/javascript">
-        
-            const toastTrigger = document.getElementById('liveToastBtn')
-            const toastLiveExample = document.getElementById('liveToast')
 
-            if (toastTrigger) {
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                toastTrigger.addEventListener('click', () => {
-                    toastBootstrap.show()
-                })
-            }
-            }
-            
-        }
+    
 
     function AddRowCerimonia() {
         var table = document.getElementById("tableCerimonia");

@@ -63,39 +63,39 @@
                 <button type="button" class="btn salvar" formaction="/Fornecedor/SalvarDados">Salvar</button>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    </div>
+</div>
 
-        <script>
-            $(document).ready(function () {
-                $('#telefone').mask('(00) 00000-0000');
-                $('#telefone1').mask('(00) 00000-0000');
-                $('#telefone2').mask('(00) 00000-0000');
-                $('#telefone3').mask('(00) 00000-0000');
-                $('#rg').mask('00.000.000-0');
-                $('#rg1').mask('00.000.000-0');
-            });
+<script>
+    $(document).ready(function () {
+        $('#telefone').mask('(00) 00000-0000');
+        $('#telefone1').mask('(00) 00000-0000');
+        $('#telefone2').mask('(00) 00000-0000');
+        $('#telefone3').mask('(00) 00000-0000');
+        $('#rg').mask('00.000.000-0');
+        $('#rg1').mask('00.000.000-0');
+    });
 
-            function ApenasLetras(e, t) {
-                try {
-                    if (window.event) {
-                        var charCode = window.event.keyCode;
-                    } else if (e) {
-                        var charCode = e.which;
-                    } else {
-                        return true;
-                    }
-                    if (
-                        (charCode > 64 && charCode < 91) ||
-                        (charCode > 96 && charCode < 123) ||
-                        (charCode > 191 && charCode <= 255) // letras com acentos
-                    ) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } catch (err) {
-                    alert(err.Description);
-                }
+    function ApenasLetras(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            } else if (e) {
+                var charCode = e.which;
+            } else {
+                return true;
             }
-        </script>
+            if (
+                (charCode > 64 && charCode < 91) ||
+                (charCode > 96 && charCode < 123) ||
+                (charCode > 191 && charCode <= 255) // letras com acentos
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (err) {
+            alert(err.Description);
+        }
+    }
+</script>

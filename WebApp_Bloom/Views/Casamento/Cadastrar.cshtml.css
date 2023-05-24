@@ -9,7 +9,12 @@ a:hover {
     text-decoration-line: underline;
 }
 
-/*----------------------------------------*/
+textarea {
+    height: 150px;
+    border: 1px solid;
+    color: black;
+    width: 65%;
+}
 
 .cardprincipal {
     background-color: #f3b6b6;
@@ -17,29 +22,30 @@ a:hover {
     padding: 2%;
 }
 
-/*----------------------------------------*/
-
-h2{ /*não apagar*/
-    text-align: center;
-    margin-top: 5%;
-}
-p {
-    display: inline;
-    margin: 0;
-    height: fit-content;
-}
-.botoes {
-    width: 100%;
+label {
+    padding-right: 2%;
 }
 
 input {
     width: 65%;
 }
-textarea {
-    height: 150px;
-    border: 1px solid;
-    color: black;
-    width: 65%;
+
+/*----------------------------------------*/
+
+
+p {
+    display: inline;
+    margin: 0;
+    height: fit-content;
+}
+.seila {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+.botoes{
+    width: 100%;
 }
 
 /*----------------------------------------*/
@@ -50,14 +56,10 @@ textarea {
     display: inline;
     height: fit-content;
 }
-label{
-    padding-right: 2%;
-}
 
 .form-group-right {
     display: flex;
     justify-content: end;
-    align-items: start;
     padding: 1%;
 }
 .caixa {
