@@ -30,7 +30,8 @@ namespace WebApp_Bloom.Controllers
         {
             db.CASAMENTOS.Add(casamento);
             db.SaveChanges();
-            return RedirectToAction("Cadastrar");   
+            return RedirectToAction("Cadastrar"); 
+            
         }
         public IActionResult Editar()
         {
