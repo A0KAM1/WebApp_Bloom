@@ -16,7 +16,7 @@ namespace WebApp_Bloom.Controllers
         {
             var Lista = new List<Select2PessoaModel>();
             
-            return RedirectToAction("Cadastrar", "Casamento");
+            return RedirectToAction("Cadastrar");
             
         }
         public IActionResult Cadastrar()
