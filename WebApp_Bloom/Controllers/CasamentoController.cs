@@ -16,7 +16,7 @@ namespace WebApp_Bloom.Controllers
         {
            
             
-            return RedirectToAction("Cadastrar", "Casamento");
+            return RedirectToAction("Cadastrar");
             
         }
         public IActionResult Cadastrar()

@@ -82,3 +82,8 @@ textarea {
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
+.salvar {
+    background-color: #ab595e;
+    color: #ffeae5;
+}
