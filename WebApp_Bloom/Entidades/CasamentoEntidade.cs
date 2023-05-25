@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Anfitriao1 { get; set; }
         public string Anfitriao2 { get; set; }
-        public DateTime DataHora { get; set; }
+
     }
 }
