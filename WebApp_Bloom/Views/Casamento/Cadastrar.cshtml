@@ -1,7 +1,6 @@
-﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+﻿@model WebApp_Bloom.Models.Select2PessoaModel
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+ 
 
 <p class="migalha mt-3">
     <a href="/Evento">Evento</a>
@@ -17,7 +16,13 @@
                 <div class="col text-end">
                     <label for="nome">
                         Nome:
-                        <select id="nome" style="width: 350px;" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" ></select>
+                        <select id="Anfitriao1" class="form-control" style="width:300px" required name="Anfitriao1">
+                            @foreach (var item in Model.Lista)
+                            {
+                                <option value="@item.Id">@item.Nome</option>
+                            }
+
+                        </select>
                     </label>
                 </div>
                 <div class="col mt-2 text-end">
@@ -38,34 +43,37 @@
 <div class="modal fade" id="pessoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+              <form action="/Pessoa/SalvarDados" method="post">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+              
                     <div class="mb-3">
                         <label for="nome" class="col-form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                        <input type="text" class="form-control" name="Nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="mb-3">
                         <label for="rg" class="col-form-label">RG:</label>
-                        <input type="text" class="form-control" name="rg" id="rg" required pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
+                        <input type="text" class="form-control" name="RG" id="rg"  pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="col-form-label">Telefone:</label>
-                        <input type="tel" class="form-control" name="telefone" id="telefone" required pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
+                        <input type="tel" class="form-control" name="Telefone" id="telefone" required  />
                     </div>
                     
                     <div class="mb-3">
                         <label for="email" class="col-form-label">E-mail:</label>
-                        <input type="email" class="form-control" name="email" required />
+                        <input type="email" class="form-control" name="Email" required />
                     </div>
-                </form>
+               
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn salvar" formaction="/Pessoa/SalvarDados">Salvar</button>
+                <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                <button type="submit" class="btn salvar">Salvar</button>
             </div>
+             </form>
         </div>
     </div>
 </div>
@@ -192,9 +200,14 @@
         </div>
     </div>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript">
-
+    $(document).ready(function () {
+        $('#Anfitriao1').select2();
+    });
+   
     function AddRowCerimonia() {
         var table = document.getElementById("tableCerimonia");
         var row = table.insertRow();

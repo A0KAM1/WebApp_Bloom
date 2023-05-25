@@ -4,7 +4,10 @@ namespace WebApp_Bloom.Models
 {
     public class Select2PessoaModel : PessoaEntidade
     {
-        public int Id { get; set; }
-        public int Nome { get; set; }
+        public Select2PessoaModel()
+        {
+            Lista = new List<PessoaEntidade>();
+        }
+        public List<PessoaEntidade> Lista { get; set; }
     }
 }

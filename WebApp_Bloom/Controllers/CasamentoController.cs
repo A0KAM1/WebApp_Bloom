@@ -14,14 +14,16 @@ namespace WebApp_Bloom.Controllers
         }
         public IActionResult Lista(string q)
         {
-            var Lista = new List<Select2PessoaModel>();
+           
             
             return RedirectToAction("Cadastrar", "Casamento");
             
         }
         public IActionResult Cadastrar()
         {
-            return View();
+            Select2PessoaModel Model = new Select2PessoaModel();
+            Model.Lista = db.PESSOAS.ToList();
+            return View(Model);
         }
         [HttpPost]
         public IActionResult SalvarDados(CasamentoEntidade casamento)
