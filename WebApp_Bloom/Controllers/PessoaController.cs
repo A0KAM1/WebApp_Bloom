@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WebApp_Bloom.Entidades;
+using WebApp_Bloom.Models;
 
 namespace WebApp_Bloom.Controllers
 {
@@ -10,10 +12,7 @@ namespace WebApp_Bloom.Controllers
         {
             db = opt;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
         public IActionResult SalvarDados(PessoaEntidade dados)
         {
             db.PESSOAS.Add(dados);

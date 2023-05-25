@@ -1,5 +1,7 @@
 ﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <p class="migalha mt-3">
     <a href="/Evento">Evento</a>
@@ -13,12 +15,16 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="col text-end">
-                    <label>Nome:</label>
-                    <input id="nome" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    <label for="nome">
+                        Nome:
+                        <select id="nome" style="width: 350px;" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" ></select>
+                    </label>
                 </div>
                 <div class="col mt-2 text-end">
-                    <label>Nome:</label>
-                    <input id="nome1" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    <label for="nome1">
+                        Nome:
+                        <select id="nome1" style="width: 350px;" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);"></select>
+                    </label>
                 </div>
             </div>
             <div class="col">
@@ -224,6 +230,37 @@
         $('#telefone3').mask('(00) 00000-0000');
         $('#rg').mask('00.000.000-0');
         $('#rg1').mask('00.000.000-0');
+
+        $('#nome').select2({
+            ajax: {
+                url: 'Casamento/Lista',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+            }
+        });
+        $('#nome1').select2({
+            ajax: {
+                url: 'Casamento/Lista',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+            }
+        });
     });  
 
     function ApenasLetras(e, t) {
