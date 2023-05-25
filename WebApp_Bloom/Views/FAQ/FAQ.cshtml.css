@@ -12,3 +12,60 @@
     padding: 1%;
     border-radius: 30px;
 }
+
+
+
+
+.scrolling-words-container {
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    position: absolute;
+    bottom: 1%;
+}
+
+.scrolling-words-box {
+    text-align: center;
+    height: 14px;
+    margin: 0 0;
+    overflow: hidden;
+}
+
+.scrolling-words-box ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 8s infinite;
+}
+
+.scrolling-words-box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+@keyframes scrollUp {
+    17%, 17% {
+        transform: translateY(-18%);
+    }
+
+    34%, 34% {
+        transform: translateY(-31%);
+    }
+
+    51%, 51% {
+        transform: translateY(-46%);
+    }
+
+    68%, 68% {
+        transform: translateY(-60%);
+    }
+    
+    85%, 85% {
+        transform: translateY(-75%);
+    }
+
+    100%, 100% {
+        transform: translateY(-89%);
+    }
+}
