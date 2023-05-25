@@ -1,4 +1,6 @@
-﻿<p class="migalha mt-3">
+﻿@model WebApp_Bloom.Models.CasamentoViewModel
+
+<p class="migalha mt-3">
     <a href="/Evento">Evento</a>
     <a>></a>
     <a href="/Casamento/Cadastrar">Cadastrar Casamento</a>
@@ -26,18 +28,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach(var item in Model.Lista)
+                    {
                         <tr>
-                        <td><label class="quadrado"><input id="select" type="checkbox" /><span class="checkmark"></span></label></td>
-                            <td class="letra">Teste</td>
-                            <td><input class="campo mesa" type="number" value="1" /></td>
-                        <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
+                            <td><label class="quadrado"><input id="select" type="checkbox" /><span class="checkmark"></span></label></td>
+                            <td class="letra">@item.Pessoa.Nome</td>
+                            <td><input class="campo mesa" type="number" value="@item.Mesa" /></td>
+                            <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar/@item.Id">Editar</button></td>
                         </tr>
-                        <tr>
-                            <td><label class="quadrado"><input id="select1" type="checkbox" /><span class="checkmark"></span></label></td>
-                            <td class="letra">Teste</td>
-                            <td><input class="campo mesa" type="number" value="1" /></td>
-                            <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
-                        </tr>
+                    }
+                    
                     </tbody>
                 </table>
             </form>

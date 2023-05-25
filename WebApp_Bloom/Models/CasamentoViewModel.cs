@@ -4,7 +4,10 @@ namespace WebApp_Bloom.Models
 {
     public class CasamentoViewModel : CasamentoEntidade
     {
-        List<ConvidadosEntidade>ListaConvidados { get; set; }
-        List<FornecedorEntidade>ListaFornecedor { get; set; }
+        public CasamentoViewModel()
+        {
+            Lista = new List<ConvidadosEntidade>();
+        }
+        public List<ConvidadosEntidade> Lista { get; set; }
     }
-}
+    }

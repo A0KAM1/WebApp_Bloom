@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApp_Bloom.Entidades;
+using WebApp_Bloom.Models;
 
 namespace WebApp_Bloom.Controllers
 {
@@ -12,7 +14,9 @@ namespace WebApp_Bloom.Controllers
         }
         public IActionResult Lista()
         {
-            return View();
+            CasamentoViewModel model = new CasamentoViewModel();
+            model.Lista = db.CONVIDADOS.ToList();
+            return View(model);
         }
         public IActionResult Editar( ConvidadosEntidade convidado) {
 
@@ -25,11 +29,18 @@ namespace WebApp_Bloom.Controllers
                 return RedirectToAction("Lista");
             }
         }
-        public IActionResult SalvarDados(ConvidadosEntidade dados)
+        public IActionResult SalvarDados(ConvidadosEntidade dados, string urlRedirect)
         {
             db.CONVIDADOS.Add(dados);
             db.SaveChanges();
-            return RedirectToAction("Cadastrar", "Casamento");
+            if (string.IsNullOrEmpty(urlRedirect))
+            {
+                return RedirectToAction("Lista");
+            }
+            else
+            {
+                return Redirect(urlRedirect);
+            }
         }
     }
 }
