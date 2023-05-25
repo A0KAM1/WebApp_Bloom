@@ -1,4 +1,7 @@
-﻿<p>
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+<p class="migalha mt-3">
     <a href="/Evento">Evento</a>
     <a>></a>
     <a>Cadastrar Casamento</a>
@@ -7,20 +10,20 @@
 <h2 class="mt-5 text-center">DADOS PESSOAIS</h2>
 <div class="cardprincipal">
     <form>
-        <div class="row">
-            <div class="col inputs">
-                <div class="form-group-right">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="col text-end">
                     <label>Nome:</label>
                     <input id="nome" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
-                <div class="form-group-right">
+                <div class="col mt-2 text-end">
                     <label>Nome:</label>
                     <input id="nome1" type="text" required placeholder="*" name="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
             </div>
-            <div class="col form-group-center">
-                <div class="seila">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pessoa" class="justify-content-center botao">Cadastrar Cliente</button>
+            <div class="col">
+                <div class="row justify-content-center">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
                 </div>
             </div>
         </div>
@@ -65,24 +68,24 @@
 <div class="cardprincipal">
     <form>
         <div class="row">
-            <div class="col form-group-center">
+            <div class="col text-center">
                 <label>Data:</label>
                 <input type="date" />
             </div>
-            <div class="col form-group-center">
+            <div class="col text-center">
                 <label>Horário:</label>
                 <input type="time" />
             </div>
         </div>
 
-        <div class="row">
-            <div class="col form-group-center">
-                <p>CERIMÔNIA</p>
+        <div class="row mt-3">
+            <div class="col text-center cronogamas">
+                CERIMÔNIA
                 <button class="drop" type="button" onclick="AddRowCerimonia()">(+)</button>
                 <button class="drop" type="button" onclick="Apagar_Linha()">(-)</button>
             </div>
-            <div class="col form-group-center">
-                <p>FESTA</p>
+            <div class="col text-center">
+                FESTA
                 <button type="button" class="drop" onclick="AddRowFesta()">(+)</button>
                 <button class="drop" type="button" onclick="Apagar_Linha1()">(-)</button>
             </div>
@@ -110,28 +113,26 @@
 <h2 class="mt-5 text-center">CONVIDADOS</h2>
 <div class="cardprincipal">
     <form>
-        <div class="row">
+        <div class="row align-items-center justify-content-center">
             <div class="col">
-                <div class="form-group-right">
+                <div class="col text-end">
                     <label>Nome:</label>
                     <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
-                <div class="form-group-right">
+                <div class="col mt-3 text-end">
                     <label>Mesa:</label>
                     <input type="number" placeholder="*" required/>
                 </div>
             </div>
-            <div class="col form-group-center">
-                <div class="botoes">
-                    <div class="form-group-center">
-                        <a class="botao" href="/Convidados/Lista">Ver lista</a>
-                    </div>
-                    <div class="form-group-center">
-                        <button action="/Convidados/SalvarDados" class="botao" type="submit">+</button>
-                    </div>
-                    <div class="form-group-center">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Convidados</button>
-                    </div>
+            <div class="col text-center">
+                <div class="row justify-content-center">
+                    <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button action="/Convidados/SalvarDados" class="botao" type="submit">+</button>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Convidados</button>
                 </div>
             </div>
         </div>
@@ -141,41 +142,39 @@
 <h2 class="mt-5 text-center">FORNECEDOR</h2>
 <div class="cardprincipal">
     <form>
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col">
-                <div class="form-group-right">
+                <div class="col text-end align-items-start">
                     <label>Nome:</label>
                     <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                 </div>
-                <div class="form-group-right">
+                <div class="col text-end align-items-start mt-3">
                     <label>Produto:</label>
                     <input type="text" placeholder="*" required/>
                 </div>
-                <div class="form-group-right">
+                <div class="col text-end align-items-start mt-3">
                     <label>Descrição:</label>
                     <textarea></textarea>
                 </div>
             </div>
-            <div class="col form-group-center">
-                <div class="botoes">
-                    <div class="form-group-center">
-                        <a class="botao" href="/Fornecedor/Lista">Ver lista</a>
-                    </div>
-                    <div class="form-group-center">
-                        <button class="botao" type="submit">+</button>
-                    </div>
-                    <div class="form-group-center">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Fornecedor</button>
-                    </div>
+            <div class="col">
+                <div class="row justify-content-center">
+                    <a class="botao" href="/Fornecedor/Lista">Ver lista</a>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button class="botao" type="submit">+</button>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Fornecedor</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
 
-<div class="form-group-center">
+<div class="text-center">
     <button class="botao_concluir" type="submit" formaction="/Casamento/SalvarDados" id="liveToastBtn" onclick="botao_salvar()">CONCLUIR</button>
-    </div>
+</div>
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -189,8 +188,6 @@
 </div>
 
 <script type="text/javascript">
-
-    
 
     function AddRowCerimonia() {
         var table = document.getElementById("tableCerimonia");

@@ -1,10 +1,14 @@
-﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+﻿<p class="migalha mt-3">
+    <a href="/Evento">Evento</a>
+    <a>></a>
+    <a href="/Casamento/Cadastrar">Cadastrar Casamento</a>
+    <a>></a>
+    <a>Convidados Casamento</a>
+</p>
 
-<div class="row">
-    <p><a class="migalha" href="/Evento">Evento</a><a class="migalha">></a><a class="migalha" href="/Casamento/Cadastrar">Cadastrar Casamento</a><a class="migalha">></a><a class="migalha">Convidados Casamento</a></p>
-    <h2>CONVIDADOS CASAMENTO</h2>
-        <div class=" card-body cardprincipal">
+<div class="row mt-5">
+    <h2 class="text-center">CONVIDADOS CASAMENTO</h2>
+    <div class=" card-body cardprincipal">
             <div class="botao_buscar">
                 <button class="botao">
                     <img  style="width: 40px; height: 40px;" src="~/css/pesquisar.png" />
@@ -25,13 +29,13 @@
                         <tr>
                         <td><label class="quadrado"><input id="select" type="checkbox" /><span class="checkmark"></span></label></td>
                             <td class="letra">Teste</td>
-                            <td><input class="campo mesa" type="number" value="1"></input></td>
+                            <td><input class="campo mesa" type="number" value="1" /></td>
                         <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
                         </tr>
                         <tr>
                             <td><label class="quadrado"><input id="select1" type="checkbox" /><span class="checkmark"></span></label></td>
                             <td class="letra">Teste</td>
-                            <td><input class="campo mesa" type="number" value="1"></input></td>
+                            <td><input class="campo mesa" type="number" value="1" /></td>
                             <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Convidados/Editar">Editar</button></td>
                         </tr>
                     </tbody>
@@ -41,8 +45,8 @@
             <label>TOTAL</label>
             <input id="total" class="campo total" type="number" readonly/>
         </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

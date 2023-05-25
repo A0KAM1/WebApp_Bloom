@@ -1,20 +1,19 @@
-﻿/*Migalha de Pão*/
+﻿/*Migalha de pão*/
 a {
-    text-decoration: none;
     color: #ab595e;
-    font-size: 14px;
+    text-decoration: none;
 }
-/*Indicacao de botao na migalha de pão*/
+
 a:hover {
     text-decoration-line: underline;
 }
 
-textarea {
-    height: 150px;
-    border: 1px solid;
-    color: black;
-    width: 65%;
+.migalha {
+    font-size: 14px;
+    color: #ab595e;
 }
+
+/*------------------------------------------------*/
 
 .cardprincipal {
     background-color: #f3b6b6;
@@ -30,58 +29,42 @@ input {
     width: 65%;
 }
 
+textarea {
+    height: 150px;
+    border: 1px solid;
+    color: black;
+    width: 65%;
+}
+
 /*----------------------------------------*/
 
-
-p {
+.cronogramas {
     display: inline;
     margin: 0;
     height: fit-content;
 }
-.seila {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-}
-.botoes{
-    width: 100%;
-}
 
 /*----------------------------------------*/
 
-.drop{
-    background-color: transparent;
-    border: none;
-    display: inline;
-    height: fit-content;
-}
-
-.form-group-right {
-    display: flex;
-    justify-content: end;
-    padding: 1%;
-}
 .caixa {
     display: flex;
     justify-content: center;
     align-items: start;
 }
 
-.form-group-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
-}
-
-.botao{
+.botao {
     background-color: white;
-    display: block;
     border: 1px solid black;
     width: 50%;
     text-align: center;
     font-size: 23px;
+}
+
+.drop{
+    background-color: transparent;
+    border: none;
+    display: inline;
+    height: fit-content;
 }
 
 .botao_concluir {
@@ -94,6 +77,7 @@ p {
     width: 30%;
 }
 
+/* Tira os botões (setinhas) do input type="number" */
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }

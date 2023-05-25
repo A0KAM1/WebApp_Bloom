@@ -2,19 +2,21 @@
     color: #ab595e;
     font-size: 30px;
 }
-/*Caminho de Rato*/
-.migalha{
-    text-decoration: none;
+/*Migalha de pão*/
+a{
     color: #ab595e;
-    font-size:14px;
+    text-decoration: none;
 }
-/*Indicacao de botao no caminho de rato*/
-migalha:hover {
+/*Indicacao de botao na migalha de pão*/
+a:hover {
     text-decoration-line: underline;
 }
-h2{
-    text-align: center;
+
+.migalha {
+    font-size: 14px;
+    color: #ab595e;
 }
+
 .imagem{
     width:400px;
     height:400px;

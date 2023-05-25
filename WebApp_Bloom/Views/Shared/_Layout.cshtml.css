@@ -60,7 +60,7 @@ button{
     padding-top: 60px;
 }
 
-.sidebar a {
+.sidebar a{
     text-decoration: none;
     font-size: 20px;
     color: #ab595e;
@@ -151,10 +151,4 @@ button{
 .btn-outline-dark:hover{
     background-color: #ab595e;
     color: #ffeae5;
-}
-
-.divFAQ{
-    position: fixed;
-    bottom: 12%;
-    right: 6%;
 }
