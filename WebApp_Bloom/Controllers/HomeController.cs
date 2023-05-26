@@ -23,7 +23,6 @@ namespace WebApp_Bloom.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Home1(string username, string senha)
         {
@@ -43,10 +42,22 @@ namespace WebApp_Bloom.Controllers
             return Json(new { Msg = "Oi" });
         }
 
+        //public async Task<IActionResult> Logout()
+        //{
+        //  if (User.Identity.IsAuthenticated)
+        //    {
+        //          await HttpContext.SignOutAsync();
+        //        }
+        //          return RedirectToAction("Index", "Home");
+        //        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
+//return RedirectToAction("Evento", "Evento");
