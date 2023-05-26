@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using WebApp_Bloom.Entidades;
 using WebApp_Bloom.Models;
 
