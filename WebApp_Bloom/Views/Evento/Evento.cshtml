@@ -1,4 +1,4 @@
-﻿@model WebApp_Bloom.Models.ListaEventosViewModel
+﻿@model WebApp_Bloom.Models.SuperNovoCasamentoViewModel
 <div class="row justify-content-end mt-3">
     <div class="botao_buscar">
         <button class="botao">
@@ -12,13 +12,6 @@
     <h2>PRÓXIMOS EVENTOS</h2>
 </div>
 
-@foreach (var item in Model.TodosCasamentos)
-{
-    <p>
-        @item.Id <br><a href="/Casamento/Convidados/@item.Id">Convidados desse casamento</a>
-    </p>
-}
-
 <h4 class="mt-5">CASAMENTOS</h4>
 <div id="carouselExampleControlsNoTouching" class="carousel slide mt-3" data-bs-touch="false" data-bs-interval="false">
     <button class="carousel-control-prev col" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -26,15 +19,15 @@
             <span class="visually-hidden">Previous</span>
         </button>
     <div class="carousel-inner">
-        @foreach (var item in Model.TodosCasamentos){
+        @foreach (var item in Model){
             <div class="carousel-item active">
                 <div class="row">
                     <div class="col justify-content-center">
                         <div class="card">
-                            <div class="p-3 align-items-center justify-content-start">DATA: 21/05/2023</div>
-                            <div class="p-3 text-center ">NOME E NOME</div>
+                            <div class="p-3 align-items-center justify-content-start">DATA: @item.data</div>
+                            <div class="p-3 text-center ">@item.Anfitriao1 e @item.Anfitriao2</div>
                             <div class="p-3 text-center">
-                                <a class="btn-concluir" href="">VER DETALHES</a>
+                                <a class="btn-concluir" href="/Casamento/Editar">VER DETALHES</a>
                             </div>
                         </div>
                     </div>
