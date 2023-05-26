@@ -7,19 +7,26 @@ namespace WebApp_Bloom.Controllers
     public class EventoController : Controller
     {
         private readonly ILogger<EventoController> _logger;
-
-        public EventoController(ILogger<EventoController> logger)
+        private readonly Contexto db;
+        public EventoController(ILogger<EventoController> logger, Contexto _db)
         {
             _logger = logger;
+            db = _db;
         }
 
         public IActionResult Index()
         {
+           
+
             return View();
         }
         public IActionResult Evento()
         {
-            return View();
+
+            ListaEventosViewModel model = new ListaEventosViewModel();
+            model.TodosCasamentos = db.CASAMENTOS.ToList();
+
+            return View(model);
         }
 
 

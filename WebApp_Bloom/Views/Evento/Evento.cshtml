@@ -1,4 +1,5 @@
-﻿<div class="row justify-content-end mt-3">
+﻿@model WebApp_Bloom.Models.ListaEventosViewModel
+<div class="row justify-content-end mt-3">
     <div class="botao_buscar">
         <button class="botao">
             <img style="width: 40px; height: 40px;" src="~/css/pesquisar.png" />
@@ -10,6 +11,13 @@
 <div class="text-center mt-3">
     <h2>PRÓXIMOS EVENTOS</h2>
 </div>
+
+@foreach (var item in Model.TodosCasamentos)
+{
+    <p>
+        @item.Id <br><a href="/Casamento/Convidados/@item.Id">Convidados desse casamento</a>
+    </p>
+}
 
 <h4 class="mt-5">CASAMENTOS</h4>
 <div id="carouselExampleControlsNoTouching" class="carousel slide mt-3" data-bs-touch="false" data-bs-interval="false">
