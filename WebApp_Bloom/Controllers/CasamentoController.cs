@@ -18,6 +18,11 @@ namespace WebApp_Bloom.Controllers
             return RedirectToAction("Cadastrar");
             
         }
+        public IActionResult SalvarCasamento(CasamentoEntidade casamento) {
+            db.CASAMENTOS.Add(casamento);
+            db.SaveChanges();
+            return RedirectToAction("Cadastrar");
+        }
         public IActionResult Cadastrar()
         {
             Select2PessoaModel Model = new Select2PessoaModel();
@@ -25,9 +30,9 @@ namespace WebApp_Bloom.Controllers
             return View(Model);
         }
         [HttpPost]
-        public IActionResult SalvarDados(CasamentoEntidade casamento)
+        public IActionResult SalvarDados(Pessoas_CasamentoEntidade casamento)
         {
-            db.CASAMENTOS.Add(casamento);
+            db.PESSOAS_CASAMENTOS.Add(casamento);
             db.SaveChanges();
             return RedirectToAction("Cadastrar"); 
             
