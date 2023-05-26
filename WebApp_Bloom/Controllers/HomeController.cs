@@ -42,16 +42,6 @@ namespace WebApp_Bloom.Controllers
             return Json(new { Msg = "Oi" });
         }
 
-//public async Task<IActionResult> Logout()
-//{
-//  if (User.Identity.IsAuthenticated)
-//    {
-//          await HttpContext.SignOutAsync();
-//        }
-//          return RedirectToAction("Index", "Home");
-//        }
-
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
