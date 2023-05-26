@@ -6,8 +6,8 @@ namespace WebApp_Bloom.Models
     {
         public CasamentoViewModel()
         {
-            Lista = new List<ConvidadosEntidade>();
+            Lista = new List<Pessoas_CasamentoEntidade>();
         }
-        public List<ConvidadosEntidade> Lista { get; set; }
+        public List<Pessoas_CasamentoEntidade> Lista { get; set; }
     }
     }

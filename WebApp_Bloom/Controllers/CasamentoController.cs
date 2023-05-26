@@ -21,7 +21,7 @@ namespace WebApp_Bloom.Controllers
         public IActionResult Cadastrar()
         {
             Select2PessoaModel Model = new Select2PessoaModel();
-            Model.Lista = db.PESSOAS.ToList();
+            Model.Lista = db.PESSOA.ToList();
             return View(Model);
         }
         [HttpPost]

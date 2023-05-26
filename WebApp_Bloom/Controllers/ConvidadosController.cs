@@ -15,10 +15,10 @@ namespace WebApp_Bloom.Controllers
         public IActionResult Lista()
         {
             CasamentoViewModel model = new CasamentoViewModel();
-            model.Lista = db.CONVIDADOS.ToList();
+            model.Lista = db.PESSOAS_CASAMENTOS.ToList();
             return View(model);
         }
-        public IActionResult Editar( ConvidadosEntidade convidado) {
+        public IActionResult Editar( Pessoas_CasamentoEntidade convidado) {
 
             if (convidado != null)
             {
@@ -29,9 +29,9 @@ namespace WebApp_Bloom.Controllers
                 return RedirectToAction("Lista");
             }
         }
-        public IActionResult SalvarDados(ConvidadosEntidade dados, string urlRedirect)
+        public IActionResult SalvarDados(Pessoas_CasamentoEntidade dados, string urlRedirect)
         {
-            db.CONVIDADOS.Add(dados);
+            db.PESSOAS_CASAMENTOS.Add(dados);
             db.SaveChanges();
             if (string.IsNullOrEmpty(urlRedirect))
             {

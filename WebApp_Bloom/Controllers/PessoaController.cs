@@ -23,7 +23,7 @@ namespace WebApp_Bloom.Controllers
             dados.Telefone = dados.Telefone.Replace(")", "");
             dados.Telefone = dados.Telefone.Replace("-", "");
             dados.Telefone = dados.Telefone.Replace(" ", "");
-            db.PESSOAS.Add(dados);
+            db.PESSOA.Add(dados);
             db.SaveChanges();
             if (string.IsNullOrEmpty(urlRedirect))
             {
