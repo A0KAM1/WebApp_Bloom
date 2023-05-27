@@ -13,7 +13,51 @@
 </div>
 
 <h4 class="mt-5">CASAMENTOS</h4>
-<div id="carouselExampleControlsNoTouching" class="carousel slide mt-3" data-bs-touch="false" data-bs-interval="false">
+
+<div class="row">
+    <button class="col-1" id="prev"><img src="~/css/prev.png" /></button>
+    <div class="col-10" id="carousel">
+        <div id="content">
+            @foreach (var item in Model.TodosCasamentos)
+            {
+                <div class="col justify-content-center item">
+                    <div class="card">
+                        <div class="align-items-center justify-content-start">DATA: dia</div>
+                        <div class="text-center ">@item.Id</div>
+                        <a class="btn-concluir text-center" href="/Casamento/Editar">EDITAR DADOS</a>
+                        <a class="btn-concluir text-center mt-2" href="/Casamento/ListaConvidados/@item.Id">VER LISTA DE CONVIDADOS</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <button class="col-1" id="next"><img src="~/css/next.png" /></button>
+</div>
+
+
+<script>
+    const gap = 70;
+
+    const carousel = document.getElementById("carousel"),
+        content = document.getElementById("content"),
+        next = document.getElementById("next"),
+        prev = document.getElementById("prev");
+
+    next.addEventListener("click", e => {
+        carousel.scrollBy(width + gap, 0);
+
+    });
+    prev.addEventListener("click", e => {
+        carousel.scrollBy(-(width + gap), 0);
+
+    });
+
+    let width = carousel.offsetWidth;
+    window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+</script>
+
+@*<div id="carouselExampleControlsNoTouching" class="carousel slide mt-3" data-bs-touch="false" data-bs-interval="false">
     <button class="carousel-control-prev col" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
             <img src="~/css/prev.png" />
             <span class="visually-hidden">Previous</span>
@@ -43,7 +87,6 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
 
 
 <h4 class="mt-5">ANIVERSÁRIOS</h4>
@@ -148,7 +191,8 @@
             </div>
         </div>
     <button class="carousel-control-next col" type="button" e="button" data-bs-target="#carouselAniversarios" data-bs-slide="next">
-            <img src="~/css/next.png" />
-            <span class="visually-hidden">Next</span>
-        </button>
+        <img src="~/css/next.png" />
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+*@
