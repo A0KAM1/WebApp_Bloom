@@ -80,7 +80,7 @@ namespace WebApp_Bloom.Controllers
         {
             Pessoas_CasamentoEntidade novo = new Pessoas_CasamentoEntidade();
             novo.CasamentoId = casamentoId;
-            novo.PessoaId = pessoaId;
+            novo.PessoaId = pessoaId; 
             db.PESSOAS_CASAMENTOS.Add(novo);
             db.SaveChanges();
             return Redirect("/Casamento/ListaConvidado/" + casamentoId);

@@ -145,7 +145,7 @@
                     </div>
                     <div class="row justify-content-end align-items-center mt-3">
                         <label style="width: fit-content;" for="nome">Produto:</label>
-                        <select id="Produto" class="form-control" style="width:65%;" required name="Convidado">
+                        <select id="Produto1" class="form-control" style="width:65%;" required name="Convidado">
                             @foreach (var item in Model.Produto)
                             {
                                 <option value="@item.Id">@item.Produto</option>
@@ -269,7 +269,7 @@
 <div class="modal fade" id="fornecedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/Fornecedor/SalvarDados" method="post">
+            <form action="/Casamento/SalvarDadosFornecedor" method="post">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Fornecedor</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -278,7 +278,7 @@
 
                     <div class="mb-3">
                         <label for="Nome" class="col-form-label">Nome</label>
-                        <input type="text" class="form-control" name="Nome" id="nome1" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                        <input type="text" class="form-control" name="Nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="col-form-label">Telefone:</label>
@@ -296,7 +296,7 @@
 <div class="modal fade" id="produto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/Casamento/SalvarDadosProdutos" method="post">
+            <form action="/Casamento/SalvarDadosProdutos">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Produto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -305,7 +305,7 @@
 
                     <div class="mb-3">
                         <label for="Produto" class="col-form-label">Nome: </label>
-                        <input type="text" class="form-control" name="Produto" id="nome2" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                        <input type="text" class="form-control" name="Produto" id="Produto" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -325,7 +325,7 @@
         $('#Anfitriao2').select2();
         $('#Convidado').select2();
         $('#Fornecedor').select2();
-        $('#Produto').select2();
+        $('#Produto1').select2();
     });
    
     function AddRowCerimonia() {
@@ -403,15 +403,11 @@
     }
 
     var listaConvidados = [];
-    var mesaConvidados = [];
     var listaFornecedores = [];
-    var listaProdutos = [];
-    var string[]descricao = new string[];
 
     function add_convidado()
     {
         listaConvidados.push($("#Convidado").find(":selected").val());
-        mesaConvidados.push($("#mesa").val());
         $("#ListaConvidados").val(listaConvidados)
         console.log($("#ListaConvidados").val())
 
@@ -420,8 +416,6 @@
     function add_fornecedor()
     {
         listaConvidados.push($("#Fornecedor").find(":selected").val());
-        listaProdutos.push($("#Produto").find(":selected").val());
-        string[]descricao = new string[].push($("#Descricao").val());
         $("#ListaFornecedor").val(listaFornecedores)
         console.log($("#ListaFornecedor").val())
 
