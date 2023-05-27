@@ -132,7 +132,7 @@ namespace WebApp_Bloom.Controllers
             return RedirectToAction("Cadastrar");
 
         }
-        public IActionResult Editar(FornecedorEntidade fornecedor)
+        public IActionResult EditarFornecedor(FornecedorEntidade fornecedor)
         {
             if (fornecedor != null)
             {
