@@ -414,11 +414,15 @@
     }
 
     var listaConvidados = [];
+    var mesaConvidados = [];
     var listaFornecedores = [];
+    var listaProdutos = [];
+    var string[]descricao = new string[];
 
     function add_convidado()
     {
         listaConvidados.push($("#Convidado").find(":selected").val());
+        mesaConvidados.push($("#mesa").val());
         $("#ListaConvidados").val(listaConvidados)
         console.log($("#ListaConvidados").val())
 
@@ -427,6 +431,8 @@
     function add_fornecedor()
     {
         listaConvidados.push($("#Fornecedor").find(":selected").val());
+        listaProdutos.push($("#Produto").find(":selected").val());
+        string[]descricao = new string[].push($("#Descricao").val());
         $("#ListaFornecedor").val(listaFornecedores)
         console.log($("#ListaFornecedor").val())
 
