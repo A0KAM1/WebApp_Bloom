@@ -1,4 +1,6 @@
-﻿namespace WebApp_Bloom.Models
+﻿using WebApp_Bloom.Entidades;
+
+namespace WebApp_Bloom.Models
 {
     public class SuperNovoCasamentoViewModel
     {
@@ -10,5 +12,6 @@
 
         public string ListaConvidados { get; set; }
         public List<int> ListaFornecedores { get; set; }
+        public List<SuperNovoCasamentoViewModel> TodosCasamentos { get; set; }
     }
 }
