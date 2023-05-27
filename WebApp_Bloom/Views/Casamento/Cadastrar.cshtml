@@ -13,33 +13,30 @@
    
             <div class="row align-items-center">
                 <div class="col">
-                    <div class="col text-end">
-                        <label for="nome">
-                            Nome:
-                            <select id="Anfitriao1" class="form-control" style="width:350px" required name="Anfitriao1">
-                                @foreach (var item in Model.Lista)
-                                {
-                                    <option value="@item.Id">@item.Nome</option>
-                                }
-                            </select>
-                        </label>
+                    <div class="row justify-content-end align-items-center">
+                        <label style="width: fit-content;" for="nome">Nome:</label>
+                    <select id="Anfitriao1" class="form-control" style="width:65%;" required name="Anfitriao1">
+                        @foreach (var item in Model.Lista)
+                        {
+                            <option value="@item.Id">@item.Nome</option>
+                        }
+                    </select>
                     </div>
-                    <div class="col mt-2 text-end">
-                        <label for="nome1">
-                            Nome:
-                            <select id="Anfitriao2" class="form-control" style="width:350px" required name="Anfitriao2">
-                                @foreach (var item in Model.Lista)
-                                {
-                                    <option value="@item.Id">@item.Nome</option>
-                                }
-
-                            </select>
-                        </label>
+                <div class="row justify-content-end align-items-center mt-2">
+                        <label style="width: fit-content;" for="nome1">Nome:</label>
+                        <select id="Anfitriao2" class="form-control" style="width:65%;" required name="Anfitriao2">
+                            @foreach (var item in Model.Lista)
+                            {
+                                <option value="@item.Id">@item.Nome</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row justify-content-center">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
+                    </div>
+                    <div class="row justify-content-center mt-2">
                         <button type="submit" class="botao">Salvar Noivos</button>
                     </div>
                 </div>
@@ -97,39 +94,36 @@
 
     <h2 class="mt-5 text-center">CONVIDADOS</h2>
     <div class="cardprincipal">
-   
-            <div class="row align-items-center justify-content-center">
-                <div class="col">
-                    <div class="col text-end">
-                        <label for="nome">
-                            Nome:
-                            <select id="Convidado" class="form-control" style="width:350px" required name="Convidado">
-                                @foreach (var item in Model.Lista)
-                                {
-                                    <option value="@item.Id">@item.Nome</option>
-                                }
+        <div class="row align-items-center justify-content-center">
+            <div class="col">
+                <div class="row justify-content-end align-items-center">
+                    <label style="width: fit-content;" for="nome">Nome:</label>
+                    <select id="Convidado" class="form-control" style="width:65%;" required name="Convidado">
+                        @foreach (var item in Model.Lista)
+                        {
+                            <option value="@item.Id">@item.Nome</option>
+                        }
 
-                            </select>
-                        </label>
-                    </div>
-                    <div class="col mt-3 text-end">
-                        <label>Mesa:</label>
-                        <input type="number" placeholder="*" required />
-                    </div>
+                    </select>
                 </div>
-                <div class="col text-center">
-                    <div class="row justify-content-center">
-                        <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
-                    </div>
-                    <div class="row justify-content-center mt-2">
-                        <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
-                        <button class="botao" type="button" onclick="add_convidado()">+</button>
-                    </div>
-                    <div class="row justify-content-center mt-2">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="justify-content-center botao">Cadastrar Convidados</button>
-                    </div>
+                <div class="row justify-content-end align-items-center mt-3">
+                    <label style="width: fit-content;">Mesa:</label>
+                    <input type="number" placeholder="*" required />
                 </div>
             </div>
+            <div class="col text-center">
+                <div class="row justify-content-center">
+                    <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
+                    <button class="botao" type="button" onclick="add_convidado()">+</button>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="justify-content-center botao">Cadastrar Convidados</button>
+                </div>
+            </div>
+        </div>
    
         
   
@@ -140,32 +134,26 @@
    
             <div class="row align-items-center">
                 <div class="col">
-                    <div class="col text-end align-items-start">
-                    <label for="nome">
-                        Nome:
-                        <select id="Fornecedor" class="form-control" style="width:350px" required name="Convidado">
+                    <div class="row justify-content-end align-items-center">
+                        <label style="width: fit-content;" for="nome">Nome:</label>
+                        <select id="Fornecedor" class="form-control" style="width:65%;" required name="Convidado">
                             @foreach (var item in Model.ListaFornecedor)
                             {
                                 <option value="@item.Id">@item.Nome</option>
                             }
-
                         </select>
-                    </label>
                     </div>
-                    <div class="col text-end align-items-start mt-3">
-                    <label for="nome">
-                        Produto:
-                        <select id="Produto" class="form-control" style="width:350px" required name="Convidado">
+                    <div class="row justify-content-end align-items-center mt-3">
+                        <label style="width: fit-content;" for="nome">Produto:</label>
+                        <select id="Produto" class="form-control" style="width:65%;" required name="Convidado">
                             @foreach (var item in Model.Produto)
                             {
                                 <option value="@item.Id">@item.Produto</option>
                             }
-
                         </select>
-                    </label>
                     </div>
-                    <div class="col text-end align-items-start mt-3">
-                        <label>Descrição:</label>
+                    <div class="row justify-content-end align-items-start mt-3">
+                        <label style="width: fit-content;">Descrição:</label>
                         <textarea></textarea>
                     </div>
                 </div>
@@ -186,6 +174,7 @@
             </div>
     
     </div>
+
     <input type="hidden" name="ListaConvidados" id="ListaConvidados" />
     <input type="hidden" value="" name="ListaFornecedor" id="ListaFornecedor" />
     <div class="text-center">
