@@ -119,10 +119,10 @@
                 </div>
                 <div class="col text-center">
                     <div class="row justify-content-center">
-                        <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                        <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                        <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
                         <button class="botao" type="button" onclick="add_convidado()">+</button>
                     </div>
                     <div class="row justify-content-center mt-2">
@@ -141,12 +141,28 @@
             <div class="row align-items-center">
                 <div class="col">
                     <div class="col text-end align-items-start">
-                        <label>Nome:</label>
-                        <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    <label for="nome">
+                        Nome:
+                        <select id="Fornecedor" class="form-control" style="width:350px" required name="Convidado">
+                            @foreach (var item in Model.ListaFornecedor)
+                            {
+                                <option value="@item.Id">@item.Nome</option>
+                            }
+
+                        </select>
+                    </label>
                     </div>
                     <div class="col text-end align-items-start mt-3">
-                        <label>Produto:</label>
-                        <input type="text" placeholder="*" required/>
+                    <label for="nome">
+                        Produto:
+                        <select id="Produto" class="form-control" style="width:350px" required name="Convidado">
+                            @foreach (var item in Model.Produto)
+                            {
+                                <option value="@item.Id">@item.Produto</option>
+                            }
+
+                        </select>
+                    </label>
                     </div>
                     <div class="col text-end align-items-start mt-3">
                         <label>Descrição:</label>
@@ -155,20 +171,23 @@
                 </div>
                 <div class="col">
                     <div class="row justify-content-center">
-                        <a class="botao" href="/Fornecedor/Lista">Ver lista</a>
+                        <a class="botao" href="/Casamento/ListaFornecedor">Ver lista</a>
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <button class="botao" type="submit">+</button>
+                        <button class="botao" type="submit" onclick="add_fornecedor()">+</button>
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Fornecedor</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#produto" class="justify-content-center botao">Cadastrar Produto</button>
                     </div>
+                <div class="row justify-content-center mt-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#fornecedor"class="justify-content-center botao">Cadastrar Fornecedor</button>
+                </div>
                 </div>
             </div>
     
     </div>
     <input type="hidden" name="ListaConvidados" id="ListaConvidados" />
-    <input type="hidden" value="" name="ListaFornecedores" id="ListaFornecedores" />
+    <input type="hidden" value="" name="ListaFornecedor" id="ListaFornecedor" />
     <div class="text-center">
         <button class="botao_concluir" type="submit" id="liveToastBtn">CONCLUIR</button>
     </div>
@@ -221,7 +240,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="convidado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -259,6 +277,56 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="fornecedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Fornecedor/SalvarDados" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Fornecedor</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="Nome" id="nome1" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="tel" class="form-control" name="Telefone" id="telefone1" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="produto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Casamento/SalvarDadosProdutos" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Produto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Produto" class="col-form-label">Nome: </label>
+                        <input type="text" class="form-control" name="Produto" id="nome2" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -267,6 +335,8 @@
         $('#Anfitriao1').select2();
         $('#Anfitriao2').select2();
         $('#Convidado').select2();
+        $('#Fornecedor').select2();
+        $('#Produto').select2();
     });
    
     function AddRowCerimonia() {
@@ -300,10 +370,7 @@
     $(document).ready(function (){
         $('#telefone').mask('(00) 00000-0000');
         $('#telefone1').mask('(00) 00000-0000');
-        $('#telefone2').mask('(00) 00000-0000');
-        $('#telefone3').mask('(00) 00000-0000');
         $('#rg').mask('00.000.000-0');
-        $('#rg1').mask('00.000.000-0');
 
        
         $('#nome1').select2({
@@ -356,4 +423,13 @@
         console.log($("#ListaConvidados").val())
 
     }
+
+    function add_fornecedor()
+    {
+        listaConvidados.push($("#Fornecedor").find(":selected").val());
+        $("#ListaFornecedor").val(listaFornecedores)
+        console.log($("#ListaFornecedor").val())
+
+    }
+
 </script>

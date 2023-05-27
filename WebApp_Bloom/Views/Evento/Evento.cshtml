@@ -1,4 +1,4 @@
-﻿@model WebApp_Bloom.Models.SuperNovoCasamentoViewModel
+﻿@model WebApp_Bloom.Models.ListaEventosViewModel
 <div class="row justify-content-end mt-3">
     <div class="botao_buscar">
         <button class="botao">
@@ -24,8 +24,8 @@
                 <div class="row">
                     <div class="col justify-content-center">
                         <div class="card">
-                            <div class="p-3 align-items-center justify-content-start">DATA: @item.data</div>
-                            <div class="p-3 text-center ">@item.Anfitriao1 e @item.Anfitriao2</div>
+                            <div class="p-3 align-items-center justify-content-start">DATA: dia</div>
+                            <div class="p-3 text-center ">@item.Id</div>
                             <div class="p-3 text-center">
                                 <a class="btn-concluir" href="/Casamento/Editar">VER DETALHES</a>
                             </div>

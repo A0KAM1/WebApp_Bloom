@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using WebApp_Bloom.Models;
 
@@ -20,12 +21,11 @@ namespace WebApp_Bloom.Controllers
 
             return View();
         }
-        public IActionResult Evento()
+        public IActionResult Evento(int id)
         {
-
+            
             ListaEventosViewModel model = new ListaEventosViewModel();
             model.TodosCasamentos = db.CASAMENTOS.ToList();
-
             return View(model);
         }
 

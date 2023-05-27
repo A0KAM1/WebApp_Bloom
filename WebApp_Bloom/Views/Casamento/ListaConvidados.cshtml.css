@@ -3,47 +3,52 @@
     font-size: 30px;
 }
 /*Migalha de pão*/
-a{
+a {
     color: #ab595e;
     text-decoration: none;
 }
-/*Indicacao de botao na migalha de pão*/
-a:hover {
-    text-decoration-line: underline;
-}
+    /*Indicacao de botao na migalha de pão*/
+    a:hover {
+        text-decoration-line: underline;
+    }
 
 .migalha {
     font-size: 14px;
     color: #ab595e;
 }
 
-.imagem{
-    width:400px;
-    height:400px;
+.imagem {
+    width: 400px;
+    height: 400px;
 }
+
 .cardprincipal {
     background-color: #f3b6b6;
     border-radius: 30px;
 }
-.botao_buscar{
+
+.botao_buscar {
     border: 1px solid;
     height: 45px;
     border-radius: 50px;
-    width:fit-content;
+    width: fit-content;
     border-color: black;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.campo{
+
+.campo {
     background-color: transparent;
     border: none;
 }
+
 .botao {
     background-color: transparent;
     border: none;
 }
-.letra{
+
+.letra {
     color: black;
 }
 /*tirar a borda da barra de pesquisar. obs: caso bugue, nao pode ter espaco depois dos dois pontos*/
@@ -103,22 +108,22 @@ textarea:focus, input:focus, select:focus {
     user-select: none;
     margin-bottom: 5px;
 }
-/*Esconde o checkbox do sistema*/
-.quadrado input {
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-/*Configuração para quando está marcado*/
-.quadrado input:checked ~ .checkmark {
-    background-color: black;
-    border: 0.8px solid;
-    border-color: black;
-}
+    /*Esconde o checkbox do sistema*/
+    .quadrado input {
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+        /*Configuração para quando está marcado*/
+        .quadrado input:checked ~ .checkmark {
+            background-color: black;
+            border: 0.8px solid;
+            border-color: black;
+        }
 
 /*Input da mesa*/
-.mesa{
+.mesa {
     border: none;
     background-color: white;
     border-radius: 5px;
@@ -128,8 +133,7 @@ textarea:focus, input:focus, select:focus {
     display: block;
 }
 /*Input total*/
-.total{
-
+.total {
     border: none;
     background-color: white;
     border-radius: 5px;
@@ -140,6 +144,7 @@ textarea:focus, input:focus, select:focus {
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 .concluir {
     border: none;
     color: #ffeae5;
@@ -148,6 +153,7 @@ input[type=number]::-webkit-inner-spin-button {
     width: 160px;
     margin-left: 760px;
 }
+
 .botao_tabela {
     border: none;
     color: #ffeae5;
@@ -158,7 +164,8 @@ input[type=number]::-webkit-inner-spin-button {
     text-decoration: none;
     display: flex;
 }
-.salvar{
-    background-color:#ab595e;
-    color:#ffeae5;
+
+.salvar {
+    background-color: #ab595e;
+    color: #ffeae5;
 }

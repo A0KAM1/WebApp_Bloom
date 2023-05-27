@@ -51,6 +51,7 @@ h2 {
 .letra {
     color: black;
 }
+
 .botao_tabela {
     border: none;
     color: #ffeae5;
@@ -61,10 +62,12 @@ h2 {
     text-decoration: none;
     display: flex;
 }
+
 .salvar {
     background-color: #ab595e;
     color: #ffeae5;
 }
+
 textarea:focus, input:focus, select:focus {
     box-shadow: 0;
     border: none;

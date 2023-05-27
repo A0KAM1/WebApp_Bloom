@@ -4,6 +4,7 @@ namespace WebApp_Bloom.Models
 {
     public class SuperNovoCasamentoViewModel
     {
+        public int Id { get; set; }
         public int Anfitriao1 { get; set; }
         public int Anfitriao2 { get; set; }
 
@@ -11,7 +12,7 @@ namespace WebApp_Bloom.Models
         public string hora { get; set; }
 
         public string ListaConvidados { get; set; }
-        public List<int> ListaFornecedores { get; set; }
-        public List<SuperNovoCasamentoViewModel> TodosCasamentos { get; set; }
+        public string ListaFornecedor { get; set; }
+
     }
 }
