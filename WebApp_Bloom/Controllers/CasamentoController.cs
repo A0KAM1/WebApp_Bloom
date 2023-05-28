@@ -41,11 +41,6 @@ namespace WebApp_Bloom.Controllers
                 novoFornecedor.FornecedorId = int.Parse(item);
                 novoFornecedor.CasamentoId = casamento.Id;
                 db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
-                Fornecedores_ProdutosEntidade novoProdutoFornecido = new Fornecedores_ProdutosEntidade();
-                novoProdutoFornecido.ProdutoId = int.Parse(item);
-                novoProdutoFornecido.FornecedorId = int.Parse(item);
-                novoProdutoFornecido.Descricao = (item);
-                db.FORNECEDORES_PRODUTOS.Add(novoProdutoFornecido);
                 db.SaveChanges();
             }
 
