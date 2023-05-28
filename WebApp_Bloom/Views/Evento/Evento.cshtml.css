@@ -31,12 +31,11 @@ textarea:focus, input:focus, select:focus {
     color: black;
 }
 
-/*-------------------------------------------------------------*/
-
-
 h4{
     margin-bottom: 0;
 }
+
+/*-------------------------------------------------------------*/
 
 .card{
     border: none;
@@ -58,24 +57,7 @@ h4{
     font-size: 80%;
 }
 
-/*.carousel {
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 0;
-    display: flex;
-    margin-right: calc(var(--bs-gutter-x) * -.5);
-    margin-left: calc(var(--bs-gutter-x) * -.5);
-    overflow: hidden;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    position: static;
-    z-index: 0;
-    display: inline;
-    width: fit-content;
-    margin: 0 0;
-    padding: 2%;
-}*/
-
+/*-------------------------------------------------*/
 
 #carousel {
     overflow: auto;
@@ -99,3 +81,15 @@ h4{
     width: 250px;
     height: 250px;
 }
+
+#prev, #next{
+    opacity: 0.5;
+}
+
+#prev:hover, #next:hover{
+    opacity: 1;
+}
+
+/*a:hover{
+    opacity: 0.5;
+}*/
