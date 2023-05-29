@@ -412,8 +412,8 @@
         $("#ListaConvidados").val(listaConvidados)
         console.log($("#ListaConvidados").val())
 
-        mesaConvidados.push($("#Mesa").val());
-        $("#Mesa").val(mesaConvidados);
+        mesaConvidados.push($("#Mesa").find(":selected").val());
+        $("#Mesa").val(mesaConvidados)
         console.log($("#Mesa"))
         
     }

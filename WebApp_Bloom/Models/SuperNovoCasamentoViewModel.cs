@@ -13,7 +13,7 @@ namespace WebApp_Bloom.Models
         public string hora { get; set; }
 
         public string ListaConvidados { get; set; }
-        public int Mesa { get; set; }
+        public string Mesa { get; set; }
         public string ListaFornecedor { get; set; }
 
     }

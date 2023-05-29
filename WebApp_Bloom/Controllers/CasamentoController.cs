@@ -21,7 +21,7 @@ namespace WebApp_Bloom.Controllers
             
         }
         [HttpPost]
-        public IActionResult SalvarDados(SuperNovoCasamentoViewModel model,Pessoas_CasamentoEntidade mesa) 
+        public IActionResult SalvarDados(SuperNovoCasamentoViewModel model) 
         {
             CasamentoEntidade casamento = new CasamentoEntidade();
             db.CASAMENTOS.Add(casamento);
@@ -33,7 +33,6 @@ namespace WebApp_Bloom.Controllers
                 novoConvidado.PessoaId = int.Parse(item);
                 novoConvidado.CasamentoId = casamento.Id;
                 novoConvidado.Ativo = true;
-                novoConvidado.Mesa = model.Mesa;
                 db.PESSOAS_CASAMENTOS.Add(novoConvidado);
                 db.SaveChanges();
             }
