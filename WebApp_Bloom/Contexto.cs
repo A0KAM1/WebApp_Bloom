@@ -16,6 +16,7 @@ namespace WebApp_Bloom
         public DbSet<Pessoas_CasamentoEntidade> PESSOAS_CASAMENTOS { get; set; }
         public DbSet<CasamentoEntidade> CASAMENTOS { get; set; }
         public DbSet<PessoaEntidade> PESSOA { get; set; }
+        public DbSet<ProdutoEntidade> PRODUTOS { get; set; }
         public DbSet<CronogramaEntidade> CRONOGRAMAS { get; set; }
         public DbSet<EventosEntidade> EVENTOS { get; set; }
         public DbSet<Cronogramas_EventosEntidade> CRONOGRAMAS_EVENTOS { get; set; }

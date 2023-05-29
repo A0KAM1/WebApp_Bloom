@@ -2,7 +2,7 @@
 {
     public class ProdutoEntidade
     {
-        public long Id { get; set; }
-        public string Nome { get; set; }
+        public int Id { get; set; }
+        public string Produto { get; set; }
     }
 }

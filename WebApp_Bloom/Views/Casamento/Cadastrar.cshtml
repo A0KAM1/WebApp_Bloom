@@ -7,244 +7,180 @@
     <a>></a>
     <a>Cadastrar Casamento</a>
 </p>
-
-<h2 class="mt-5 text-center">DADOS PESSOAIS</h2>
-<div class="cardprincipal">
-    <form action="/Casamento/SalvarDados" method="post">
-        <div class="row align-items-center">
-            <div class="col">
-                <div class="col text-end">
-                    <label for="nome">
-                        Nome:
-                        <select id="Anfitriao1" class="form-control" style="width:350px" required name="Anfitriao1">
+ <form action="/Casamento/SalvarDados" method="post">
+    <h2 class="mt-5 text-center">DADOS PESSOAIS</h2>
+    <div class="cardprincipal">
+   
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row justify-content-end align-items-center">
+                        <label style="width: fit-content;" for="nome">Nome:</label>
+                    <select id="Anfitriao1" class="form-control" style="width:65%;" required name="Anfitriao1">
+                        @foreach (var item in Model.Lista)
+                        {
+                            <option value="@item.Id">@item.Nome</option>
+                        }
+                    </select>
+                    </div>
+                <div class="row justify-content-end align-items-center mt-2">
+                        <label style="width: fit-content;" for="nome1">Nome:</label>
+                        <select id="Anfitriao2" class="form-control" style="width:65%;" required name="Anfitriao2">
                             @foreach (var item in Model.Lista)
                             {
                                 <option value="@item.Id">@item.Nome</option>
                             }
-
                         </select>
-                    </label>
+                    </div>
                 </div>
-                <div class="col mt-2 text-end">
-                    <label for="nome1">
-                        Nome:
-                        <select id="Anfitriao2" class="form-control" style="width:350px" required name="Anfitriao2">
-                            @foreach (var item in Model.Lista)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
-
-                        </select>
-                    </label>
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <button type="submit" class="botao">Salvar Noivos</button>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="row justify-content-center">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
-                    <button type="submit" class="botao">Salvar Noivos</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="modal fade" id="pessoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-              <form action="/Pessoa/SalvarDados" method="post">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              
-                    <div class="mb-3">
-                        <label for="Nome" class="col-form-label">Nome</label>
-                        <input type="text" class="form-control" name="Nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="rg" class="col-form-label">RG:</label>
-                        <input type="text" class="form-control" name="RG" id="rg"  pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefone" class="col-form-label">Telefone:</label>
-                        <input type="tel" class="form-control" name="Telefone" id="telefone" required  />
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="email" class="col-form-label">E-mail:</label>
-                        <input type="email" class="form-control" name="Email" required />
-                    </div>
-               
-            </div>
-            <div class="modal-footer">
-                <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
-                <button type="submit" class="btn salvar">Salvar</button>
-            </div>
-             </form>
-        </div>
+  
     </div>
-</div>
 
-<h2 class="mt-5 text-center">CRONOGRAMA</h2>
-<div class="cardprincipal">
-    <form>
-        <div class="row">
-            <div class="col text-center">
-                <label>Data:</label>
-                <input type="date" />
-            </div>
-            <div class="col text-center">
-                <label>Horário:</label>
-                <input type="time" />
-            </div>
-        </div>
 
-        <div class="row mt-3">
-            <div class="col text-center cronogamas">
-                CERIMÔNIA
-                <button class="drop" type="button" onclick="AddRowCerimonia()">(+)</button>
-                <button class="drop" type="button" onclick="Apagar_Linha()">(-)</button>
+    <h2 class="mt-5 text-center">CRONOGRAMA</h2>
+    <div class="cardprincipal">
+   
+            <div class="row">
+                <div class="col text-center">
+                    <label>Data:</label>
+                    <input type="date" name="data" />
+                </div>
+                <div class="col text-center">
+                    <label>Horário:</label>
+                    <input type="time" name="hora" />
+                </div>
             </div>
-            <div class="col text-center">
-                FESTA
-                <button type="button" class="drop" onclick="AddRowFesta()">(+)</button>
-                <button class="drop" type="button" onclick="Apagar_Linha1()">(-)</button>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col caixa">
-                <table id="tableCerimonia">
-                    <tbody>
-                    </tbody>
-                </table>
+            <div class="row mt-3">
+                <div class="col text-center cronogamas">
+                    CERIMÔNIA
+                    <button class="drop" type="button" onclick="AddRowCerimonia()">(+)</button>
+                    <button class="drop" type="button" onclick="Apagar_Linha()">(-)</button>
+                </div>
+                <div class="col text-center">
+                    FESTA
+                    <button type="button" class="drop" onclick="AddRowFesta()">(+)</button>
+                    <button class="drop" type="button" onclick="Apagar_Linha1()">(-)</button>
+                </div>
             </div>
-            <div class="col caixa">
-                <table id="tableFesta">
-                    <tbody>
-                    </tbody>
-                </table>
+
+            <div class="row">
+                <div class="col caixa">
+                    <table id="tableCerimonia">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col caixa">
+                    <table id="tableFesta">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
         
-    </form>
+   
 
-</div>
+    </div>
 
 
-<h2 class="mt-5 text-center">CONVIDADOS</h2>
-<div class="cardprincipal">
-    <form>
+    <h2 class="mt-5 text-center">CONVIDADOS</h2>
+    <div class="cardprincipal">
         <div class="row align-items-center justify-content-center">
             <div class="col">
-                <div class="col text-end">
-                    <label for="nome">
-                        Nome:
-                        <select id="Convidado" class="form-control" style="width:350px" required name="Convidado">
-                            @foreach (var item in Model.Lista)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
+                <div class="row justify-content-end align-items-center">
+                    <label style="width: fit-content;" for="nome">Nome:</label>
+                    <select id="Convidado" class="form-control" style="width:65%;" required name="Convidado">
+                        @foreach (var item in Model.Lista)
+                        {
+                            <option value="@item.Id">@item.Nome</option>
+                        }
 
-                        </select>
-                    </label>
+                    </select>
                 </div>
-                <div class="col mt-3 text-end">
-                    <label>Mesa:</label>
+                <div class="row justify-content-end align-items-center mt-3">
+                    <label style="width: fit-content;">Mesa:</label>
                     <input type="number" placeholder="*" required />
                 </div>
             </div>
             <div class="col text-center">
                 <div class="row justify-content-center">
-                    <a class="botao" href="/Convidados/Lista">Ver lista</a>
+                    <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
                 </div>
                 <div class="row justify-content-center mt-2">
-                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
-                    <button action="/Convidados/SalvarDados" class="botao" type="submit">+</button>
+                    <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
+                    <button class="botao" type="button" onclick="add_convidado()">+</button>
                 </div>
                 <div class="row justify-content-center mt-2">
                     <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="justify-content-center botao">Cadastrar Convidados</button>
                 </div>
             </div>
         </div>
-    </form>
+   
         
-    <div class="modal fade" id="convidado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="/Pessoa/SalvarDados" method="post">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="mb-3">
-                            <label for="Nome" class="col-form-label">Nome</label>
-                            <input type="text" class="form-control" name="Nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="rg" class="col-form-label">RG:</label>
-                            <input type="text" class="form-control" name="RG" id="rg" pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefone" class="col-form-label">Telefone:</label>
-                            <input type="tel" class="form-control" name="Telefone" id="telefone" required />
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="col-form-label">E-mail:</label>
-                            <input type="email" class="form-control" name="Email" required />
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
-                        <button type="submit" class="btn salvar">Salvar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  
     </div>
-</div>
 
-<h2 class="mt-5 text-center">FORNECEDOR</h2>
-<div class="cardprincipal">
-    <form>
-        <div class="row align-items-center">
-            <div class="col">
-                <div class="col text-end align-items-start">
-                    <label>Nome:</label>
-                    <input type="text" placeholder="*" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+    <h2 class="mt-5 text-center">FORNECEDOR</h2>
+    <div class="cardprincipal">
+   
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row justify-content-end align-items-center">
+                        <label style="width: fit-content;" for="nome">Nome:</label>
+                        <select id="Fornecedor" class="form-control" style="width:65%;" required name="Convidado">
+                            @foreach (var item in Model.ListaFornecedor)
+                            {
+                                <option value="@item.Id">@item.Nome</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row justify-content-end align-items-center mt-3">
+                        <label style="width: fit-content;" for="nome">Produto:</label>
+                        <select id="Produto1" class="form-control" style="width:65%;" required name="Convidado">
+                            @foreach (var item in Model.Produto)
+                            {
+                                <option value="@item.Id">@item.Produto</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row justify-content-end align-items-start mt-3">
+                        <label style="width: fit-content;">Descrição:</label>
+                        <textarea></textarea>
+                    </div>
                 </div>
-                <div class="col text-end align-items-start mt-3">
-                    <label>Produto:</label>
-                    <input type="text" placeholder="*" required/>
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <a class="botao" href="/Casamento/ListaFornecedor">Ver lista</a>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <button class="botao" type="submit" onclick="add_fornecedor()">+</button>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#produto" class="justify-content-center botao">Cadastrar Produto</button>
+                    </div>
+                <div class="row justify-content-center mt-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#fornecedor"class="justify-content-center botao">Cadastrar Fornecedor</button>
                 </div>
-                <div class="col text-end align-items-start mt-3">
-                    <label>Descrição:</label>
-                    <textarea></textarea>
                 </div>
             </div>
-            <div class="col">
-                <div class="row justify-content-center">
-                    <a class="botao" href="/Fornecedor/Lista">Ver lista</a>
-                </div>
-                <div class="row justify-content-center mt-2">
-                    <button class="botao" type="submit">+</button>
-                </div>
-                <div class="row justify-content-center mt-2">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao">Cadastrar Fornecedor</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+    
+    </div>
 
-<div class="text-center">
-    <button class="botao_concluir" type="submit" formaction="/Casamento/SalvarDados" id="liveToastBtn" onclick="botao_salvar()">CONCLUIR</button>
-</div>
-
+    <input type="hidden" name="ListaConvidados" id="ListaConvidados" />
+    <input type="hidden" value="" name="ListaFornecedor" id="ListaFornecedor" />
+    <div class="text-center">
+        <button class="botao_concluir" type="submit" id="liveToastBtn">CONCLUIR</button>
+    </div>
+</form>
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header justify-content-end">
@@ -252,6 +188,131 @@
         </div>
         <div class="toast-body">
             Os dados foram salvos!
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pessoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Pessoa/SalvarDados" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="Nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="rg" class="col-form-label">RG:</label>
+                        <input type="text" class="form-control" name="RG" id="rg" pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="tel" class="form-control" name="Telefone" id="telefone" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">E-mail:</label>
+                        <input type="email" class="form-control" name="Email" required />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="convidado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Pessoa/SalvarDados" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Cliente</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="Nome" id="nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="rg" class="col-form-label">RG:</label>
+                        <input type="text" class="form-control" name="RG" id="rg" pattern="\[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="tel" class="form-control" name="Telefone" id="telefone" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">E-mail:</label>
+                        <input type="email" class="form-control" name="Email" required />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="fornecedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Casamento/SalvarDadosFornecedor" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Fornecedor</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Nome" class="col-form-label">Nome</label>
+                        <input type="text" class="form-control" name="Nome" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="tel" class="form-control" name="Telefone" id="telefone1" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="produto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Casamento/SalvarDadosProdutos">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Produto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Produto" class="col-form-label">Nome: </label>
+                        <input type="text" class="form-control" name="Produto" id="Produto" required pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" onkeypress="return ApenasLetras(event,this);" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input name="urlRedirect" type="hidden" value="/Casamento/Cadastrar" />
+                    <button type="submit" class="btn salvar">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -263,6 +324,8 @@
         $('#Anfitriao1').select2();
         $('#Anfitriao2').select2();
         $('#Convidado').select2();
+        $('#Fornecedor').select2();
+        $('#Produto1').select2();
     });
    
     function AddRowCerimonia() {
@@ -296,10 +359,7 @@
     $(document).ready(function (){
         $('#telefone').mask('(00) 00000-0000');
         $('#telefone1').mask('(00) 00000-0000');
-        $('#telefone2').mask('(00) 00000-0000');
-        $('#telefone3').mask('(00) 00000-0000');
         $('#rg').mask('00.000.000-0');
-        $('#rg1').mask('00.000.000-0');
 
        
         $('#nome1').select2({
@@ -341,4 +401,24 @@
             alert(err.Description);
         }
     }
+
+    var listaConvidados = [];
+    var listaFornecedores = [];
+
+    function add_convidado()
+    {
+        listaConvidados.push($("#Convidado").find(":selected").val());
+        $("#ListaConvidados").val(listaConvidados)
+        console.log($("#ListaConvidados").val())
+        
+    }
+
+    function add_fornecedor()
+    {
+        listaConvidados.push($("#Fornecedor").find(":selected").val());
+        $("#ListaFornecedor").val(listaFornecedores)
+        console.log($("#ListaFornecedor").val())
+
+    }
+
 </script>

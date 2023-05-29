@@ -1,0 +1,16 @@
+﻿@model WebApp_Bloom.Models.ConvidadosViewModel
+
+
+
+<ol>
+    @foreach(var item in Model.ConvidadosParaCasamento){
+        <li>@item.Pessoa.Nome</li>
+    }
+</ol>
+
+<ol>
+    @foreach (var item in Model.ListaTodasPessoasCadastradasNoSistema)
+    {
+        <li>@item.Nome - <a href="/Casamento/AddConvidado/@Model.CasamentoId/@item.Id/" class="btn btn-success">Convidar para o casamento</a></li>
+    }
+</ol>
