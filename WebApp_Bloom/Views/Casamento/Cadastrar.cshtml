@@ -36,11 +36,11 @@
                     <div class="row justify-content-center">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
                     </div>
-                    <div class="row justify-content-center mt-2">
+                    @*<div class="row justify-content-center mt-2">
                         <button type="submit" class="botao">Salvar Noivos</button>
+                    </div>*@
                     </div>
                 </div>
-            </div>
   
     </div>
 
@@ -108,13 +108,13 @@
                 </div>
                 <div class="row justify-content-end align-items-center mt-3">
                     <label style="width: fit-content;">Mesa:</label>
-                    <input type="number" placeholder="*" required />
+                    <input type="number" placeholder="*" required name="Mesa" id="Mesa"/>
                 </div>
             </div>
             <div class="col text-center">
-                <div class="row justify-content-center">
+                @*<div class="row justify-content-center">
                     <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
-                </div>
+                </div>*@
                 <div class="row justify-content-center mt-2">
                     <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
                     <button class="botao" type="button" onclick="add_convidado()">+</button>
@@ -403,6 +403,7 @@
     }
 
     var listaConvidados = [];
+    var mesaConvidados = [];
     var listaFornecedores = [];
 
     function add_convidado()
@@ -410,6 +411,10 @@
         listaConvidados.push($("#Convidado").find(":selected").val());
         $("#ListaConvidados").val(listaConvidados)
         console.log($("#ListaConvidados").val())
+        
+        mesaConvidados.push($("#Mesa").val());
+        $("#Mesa").val(mesaConvidados);
+        console.log($("#Mesa"))
         
     }
 
