@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language.Extensions;
 using Microsoft.EntityFrameworkCore;
 using WebApp_Bloom.Entidades;
 using WebApp_Bloom.Models;
@@ -20,7 +21,7 @@ namespace WebApp_Bloom.Controllers
             
         }
         [HttpPost]
-        public IActionResult SalvarDados(SuperNovoCasamentoViewModel model) 
+        public IActionResult SalvarDados(SuperNovoCasamentoViewModel model,Pessoas_CasamentoEntidade mesa) 
         {
             CasamentoEntidade casamento = new CasamentoEntidade();
             db.CASAMENTOS.Add(casamento);
@@ -31,10 +32,12 @@ namespace WebApp_Bloom.Controllers
                 Pessoas_CasamentoEntidade novoConvidado = new Pessoas_CasamentoEntidade();
                 novoConvidado.PessoaId = int.Parse(item);
                 novoConvidado.CasamentoId = casamento.Id;
+                novoConvidado.Ativo = true;
+                novoConvidado.Mesa = model.Mesa;
                 db.PESSOAS_CASAMENTOS.Add(novoConvidado);
                 db.SaveChanges();
             }
-
+            
             foreach (var item in model.ListaFornecedor.Split(","))
             {
                 Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
@@ -75,7 +78,7 @@ namespace WebApp_Bloom.Controllers
         {
             Pessoas_CasamentoEntidade novo = new Pessoas_CasamentoEntidade();
             novo.CasamentoId = casamentoId;
-            novo.PessoaId = pessoaId; 
+            novo.PessoaId = pessoaId;
             db.PESSOAS_CASAMENTOS.Add(novo);
             db.SaveChanges();
             return Redirect("/Casamento/ListaConvidado/" + casamentoId);
