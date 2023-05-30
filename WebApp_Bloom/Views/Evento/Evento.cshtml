@@ -1,10 +1,10 @@
 ﻿@model WebApp_Bloom.Models.ListaEventosViewModel
 <div class="row justify-content-end mt-3">
     <div class="botao_buscar">
-        <button class="botao">
+        <button class="botao" onclick="pesquisar()">
             <img style="width: 40px; height: 40px;" src="~/css/pesquisar.png" />
         </button>
-        <input id="myInput" type="text" />
+        <input id="myInput" type="number" />
     </div>
 </div>
 
@@ -23,7 +23,7 @@
                 <div class="col justify-content-center item">
                     <div class="card">
                         <div class="align-items-center justify-content-start">DATA: dia</div>
-                        <div class="text-center ">@item.Id</div>
+                        <id class="text-center id-casamento">@item.Id</id>
                         <a class="btn-concluir text-center" href="/Casamento/Editar/@item.Id">EDITAR DADOS</a>
                         <a class="btn-concluir text-center mt-2" href="/Casamento/ListaConvidados/@item.Id">VER LISTA DE CONVIDADOS</a>
                     </div>
@@ -55,5 +55,23 @@
 
     let width = carousel.offsetWidth;
     window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+    function pesquisar(){
+        let inputElement = document.querySelector("input")
+        let listElement = document.querySelector("div class='col justify - content - center item'")
+        let itemElement = document.querySelectorAll("li")
+        
+        let inputed = e.target.value()
+
+        itemElement.forEach((li) => {
+            let text = li.textContent()
+            if(text.includes(inputed)){
+                listElement.style.display = "block"
+            }
+            else{
+                listElement.style.display = "none"
+            }
+        }
+    })
 
 </script>
