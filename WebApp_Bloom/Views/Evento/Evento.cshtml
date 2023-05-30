@@ -26,6 +26,7 @@
                         <id class="text-center id-casamento">@item.Id</id>
                         <a class="btn-concluir text-center" href="/Casamento/Editar/@item.Id">EDITAR DADOS</a>
                         <a class="btn-concluir text-center mt-2" href="/Casamento/ListaConvidados/@item.Id">VER LISTA DE CONVIDADOS</a>
+                        <a class="btn-concluir text-center mt-2" href="/Casamento/ListaFornecedor/@item.Id">VER LISTA DE FORNECEDORES</a>
                     </div>
                 </div>
             }
@@ -56,22 +57,22 @@
     let width = carousel.offsetWidth;
     window.addEventListener("resize", e => (width = carousel.offsetWidth));
 
-    function pesquisar(){
-        let inputElement = document.querySelector("input")
-        let listElement = document.querySelector("div class='col justify - content - center item'")
-        let itemElement = document.querySelectorAll("li")
+    //function pesquisar(){
+    //    let inputElement = document.querySelector("input")
+    //    let listElement = document.querySelector("div class='col justify - content - center item'")
+    //    let itemElement = document.querySelectorAll("li")
         
-        let inputed = e.target.value()
+    //    let inputed = e.target.value()
 
-        itemElement.forEach((li) => {
-            let text = li.textContent()
-            if(text.includes(inputed)){
-                listElement.style.display = "block"
-            }
-            else{
-                listElement.style.display = "none"
-            }
-        }
-    })
+    //    itemElement.forEach((li) => {
+    //        let text = li.textContent()
+    //        if(text.includes(inputed)){
+    //            listElement.style.display = "block"
+    //        }
+    //        else{
+    //            listElement.style.display = "none"
+    //        }
+    //    }
+    //})
 
 </script>

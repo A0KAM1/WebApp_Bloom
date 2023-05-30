@@ -1,5 +1,5 @@
-﻿@model WebApp_Bloom.Models.Select2PessoaModel
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+﻿@model WebApp_Bloom.Models.SuperNovoCasamentoViewModel
+@*<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />*@
 
 
 <p class="migalha mt-3">
@@ -14,22 +14,14 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="col text-end">
-                    <label for="nome">Nome:</label>
-                    @foreach (var item in Model.Lista)
-                    {
-                        <select id="Anfitriao1" class="form-control" style="width:350px" required name="Anfitriao1">
-                            <option value="@item.Id">@item.Nome</option>
-                        </select>
-                    }
+                    <label for="nome">Nome:</label> 
+                    <input type="text" readonly value="@Model.Anfitriao1" id="Anfitriao1" name="Anfitriao1"/>
+                    
                 </div>
                 <div class="col mt-2 text-end">
                     <label for="nome1">Nome:</label>
-                    @foreach(var item in Model.Lista)
-                    {
-                        <select id="Anfitriao2" class="form-control" style="width:350px" required name="Anfitriao2">
-                            <option value="@item.Id">@item.Nome</option>
-                        </select>
-                    }
+                    <input type="text" readonly value="@Model.Anfitriao2" id="Anfitriao2" name="Anfitriao2" />
+                   
                 </div>
             </div>
             <div class="col">
@@ -96,10 +88,8 @@
         <div class="row align-items-center justify-content-center">
             <div class="col">
                 <div class="col text-end">
-                    <label for="nome">Nome</label>
-                    <select id="Convidado" class="form-control" style="width:350px" required name="Convidado">
-
-                    </select>
+                    <label for="nome">Nome:</label>
+                    <input  type="text" value="" readonly id="Convidado"/>
                 </div>
                 <div class="col mt-3 text-end">
                     <label>Mesa:</label>
@@ -131,14 +121,11 @@
             <div class="col">
                 <div class="col text-end align-items-start">
                     <label for="nome">Nome:</label>
-                    <select id="Fornecedor" class="form-control" style="width:350px" required name="Convidado">
-                    </select>
+                    <input type="text" value="" readonly id="Fornecedor" />
                 </div>
                 <div class="col text-end align-items-start mt-3">
                     <label for="nome">Produto:</label>
-                    <select id="Produto" class="form-control" style="width:350px" required name="Convidado">
-
-                    </select>
+                    <input type="text" value="" readonly id="Produto" />
                 </div>
                 <div class="col text-end align-items-start mt-3">
                     <label>Descrição:</label>
@@ -391,6 +378,7 @@
 
     var listaConvidados = [];
     var listaFornecedores = [];
+    var listaProdutos = [];
 
     function add_convidado() {
         listaConvidados.push($("#Convidado").find(":selected").val());
@@ -403,7 +391,6 @@
         listaConvidados.push($("#Fornecedor").find(":selected").val());
         $("#ListaFornecedor").val(listaFornecedores)
         console.log($("#ListaFornecedor").val())
-
     }
 
 </script>

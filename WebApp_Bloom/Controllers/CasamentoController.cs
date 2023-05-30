@@ -29,13 +29,24 @@ namespace WebApp_Bloom.Controllers
             
             Pessoas_CasamentoEntidade noivo = new Pessoas_CasamentoEntidade();
             noivo.PessoaId = model.Anfitriao1;
-            noivo.CasamentoId = model.Id;
+            noivo.CasamentoId = casamento.Id;
+            noivo.Ativo = false;
+            db.PESSOAS_CASAMENTOS.Add(noivo); 
+            db.SaveChanges();
 
             Pessoas_CasamentoEntidade noivo1 = new Pessoas_CasamentoEntidade();
             noivo1.PessoaId = model.Anfitriao2;
-            noivo1.CasamentoId = model.Id;
+            noivo1.CasamentoId = casamento.Id;
+            noivo1.Ativo = false;
+            db.PESSOAS_CASAMENTOS.Add(noivo1);
+            db.SaveChanges();
 
-
+            //CronogramaEntidade dia = new CronogramaEntidade();
+            //model.data = model.data.Replace("/", "");
+            //dia.Dia = model.data;
+            //dia.CasamentoId = casamento.Id;
+            //db.CRONOGRAMAS.Add(dia);
+            //db.SaveChanges();
 
             foreach (var item in model.ListaConvidados.Split(","))
             {
@@ -46,15 +57,28 @@ namespace WebApp_Bloom.Controllers
                 db.PESSOAS_CASAMENTOS.Add(novoConvidado);
                 db.SaveChanges();
             }
+
+            foreach (var item in model.ListaFornecedor.Split(","))
+            {
+                var x = 0;
+                Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
+                novoFornecedor.FornecedorId = int.Parse(item);
+                novoFornecedor.CasamentoId = casamento.Id;
+                foreach (var i in model.ListaProduto.Split(","))
+                {
+                    var y = 0;
+                    if(x == y)
+                    {
+                        novoFornecedor.ProdutoId = int.Parse(i);
+                    }
+                    y++;
+                }
+                x++;
+                db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
+                db.SaveChanges();
+            }
+
             
-            //foreach (var item in model.ListaFornecedor.Split(","))
-            //{
-            //    Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
-            //    novoFornecedor.FornecedorId = int.Parse(item);
-            //    novoFornecedor.CasamentoId = casamento.Id;
-            //    db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
-            //    db.SaveChanges();
-            //}
 
 
             return RedirectToAction("Evento","Evento");
@@ -66,20 +90,24 @@ namespace WebApp_Bloom.Controllers
             Model.ListaFornecedor = db.FORNECEDORES.ToList();
             Model.Produto = db.PRODUTOS.ToList();
             return View(Model);
-        }  
-        public IActionResult Editar()
+        }
+        [Route("[controller]/[action]/{casamentoId}")]
+        public IActionResult Editar(int casamentoId)
         {
-            
-            return View();
+            SuperNovoCasamentoViewModel model = new SuperNovoCasamentoViewModel();
+            model.Id = casamentoId;
+            //model.Anfitriao1 = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == casamentoId).Where(a => a.Ativo == false).Include(a => a.PessoaId).Include(a => a.Pessoa.Nome).FirstOrDefault().Pessoa;
+            //model.Anfitriao2 = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == casamentoId).Where(a => a.Ativo == false).Include(a => a.PessoaId).Include(a => a.Pessoa.Nome).LastOrDefault().Pessoa;
+            return View(model);
         }
 
         public IActionResult ListaConvidados(int id)
         {
 
             ConvidadosViewModel model = new ConvidadosViewModel();
-            model.ConvidadosParaCasamento = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == id).Include(a => a.Pessoa).Include(a => a.Casamento).Include(a => a.Ativo == true).ToList();
+            model.ConvidadosParaCasamento = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == id).Include(a => a.Pessoa).Include(a => a.Casamento).Where(a => a.Ativo == true).ToList();
             model.CasamentoId = id;
-            ; return View(model);
+            return View(model);
         }
 
         [Route("[controller]/[action]/{casamentoId}/{pessoaId}")]
@@ -115,12 +143,12 @@ namespace WebApp_Bloom.Controllers
             db.SaveChanges();
             return Redirect("/Casamento/ListaFornecedor/" + casamentoId);
         }
-        public IActionResult ListaFornecedor(int id)
+        public IActionResult ListaFornecedor(int casamentoId)
         {
             FornecedorViewModel model = new FornecedorViewModel();
-            model.FornecedoresdoCasamento = db.FORNECEDORES_CASAMENTOS.Where(a => a.CasamentoId == id).Include(a => a.Fornecedor).Include(a => a.Casamento).ToList();
-            model.CasamentoId = id;
-            ; return View(model);
+            model.FornecedoresdoCasamento = db.FORNECEDORES_CASAMENTOS.Where(a => a.CasamentoId == casamentoId).Include(a => a.Fornecedor).Include(a => a.Casamento).Include(a => a.Produto).ToList();
+            model.CasamentoId = casamentoId;
+            return View(model);
         }
         public IActionResult SalvarDadosProdutos(ProdutoEntidade dados) 
         {

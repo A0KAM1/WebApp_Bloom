@@ -15,6 +15,8 @@ namespace WebApp_Bloom.Models
         public string ListaConvidados { get; set; }
         public string Mesa { get; set; }
         public string ListaFornecedor { get; set; }
+        public string ListaProduto { get; set; }
+
 
     }
 }

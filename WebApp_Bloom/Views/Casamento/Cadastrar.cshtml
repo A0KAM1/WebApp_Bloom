@@ -36,9 +36,9 @@
                     <div class="row justify-content-center">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#pessoa" class="botao">Cadastrar Cliente</button>
                     </div>
-                    @*<div class="row justify-content-center mt-2">
-                        <button type="submit" class="botao">Salvar Noivos</button>
-                    </div>*@
+                    <div class="row justify-content-center mt-2">
+                    <button type="button" onclick="add_noivos()" class="botao">Salvar Noivos</button>
+                    </div>
                 </div>
             </div>
   
@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col text-center">
                     <label>Data:</label>
-                    <input type="date" name="Dia" />
+                    <input type="date" name="Dia" id="Dia" oninput="dia_casamento()"/>
                 </div>
                 <div class="col text-center">
                     <label>Horário:</label>
@@ -112,9 +112,9 @@
                 </div>
             </div>
             <div class="col text-center">
-                @*<div class="row justify-content-center">
-                    <a class="botao" href="/Casamento/ListaConvidados">Ver lista</a>
-                </div>*@
+                <div class="row justify-content-center">
+                    <a class="botao" href="/Casamento/ListaConvidados/@Model.Id">Ver lista</a>
+                </div>
                 <div class="row justify-content-center mt-2">
                     <input name="urlRedirect" type="hidden" value="Casamento/Cadastrar" />
                     <button class="botao" type="button" onclick="add_convidado()">+</button>
@@ -136,7 +136,7 @@
                 <div class="col">
                     <div class="row justify-content-end align-items-center">
                         <label style="width: fit-content;" for="nome">Nome:</label>
-                        <select id="Fornecedor" class="form-control" style="width:65%;" required name="Convidado">
+                        <select id="Fornecedor" class="form-control" style="width:65%;" required name="Fornecedor">
                             @foreach (var item in Model.ListaFornecedor)
                             {
                                 <option value="@item.Id">@item.Nome</option>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="row justify-content-end align-items-center mt-3">
                         <label style="width: fit-content;" for="nome">Produto:</label>
-                        <select id="Produto1" class="form-control" style="width:65%;" required name="Convidado">
+                        <select id="Produto1" class="form-control" style="width:65%;" required name="Produto">
                             @foreach (var item in Model.Produto)
                             {
                                 <option value="@item.Id">@item.Produto</option>
@@ -162,7 +162,7 @@
                         <a class="botao" href="/Casamento/ListaFornecedor">Ver lista</a>
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <button class="botao" type="submit" onclick="add_fornecedor()">+</button>
+                        <button class="botao" type="button" onclick="add_fornecedor()">+</button>
                     </div>
                     <div class="row justify-content-center mt-2">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#produto" class="justify-content-center botao">Cadastrar Produto</button>
@@ -177,8 +177,10 @@
 
     <input type="hidden" name="ListaConvidados" id="ListaConvidados" />
     <input type="hidden" value="" name="ListaFornecedor" id="ListaFornecedor" />
+    <input type="hidden" value="" name="ListaProduto" id="ListaProduto" />
     <input type="hidden" value="" name="Anfitriao1" id="Anfitriao1" />
     <input type="hidden" value="" name="Anfitriao2" id="Anfitriao2" />
+    <input type="hidden" value="" name="Dia" id="data" />
     <div class="text-center">
         <button class="botao_concluir" type="submit" id="liveToastBtn">CONCLUIR</button>
     </div>
@@ -403,19 +405,31 @@
             alert(err.Description);
         }
     }
-
+    
     var listaConvidados = [];
     var mesaConvidados = [];
     var listaFornecedores = [];
+    var listaProdutos = [];
 
-    var Anfitriao1;
-    var Anfitriao2;
-    Anfitriao1.push($("#Anfitriao1").find(":selected").val());
-    Anfitriao2.push($("#Anfitriao2").find(":selected").val());
-    $("#Anfitriao1").val(Anfitriao1)
-    $("#Anfitriao2").val(Anfitriao2)
-    console.log($("#Anfitriao1").val())
-    console.log($("#Anfitriao2").val())
+    
+    function add_noivos() {
+        let Anfitriao1 = [];
+        let Anfitriao2 = [];
+
+        Anfitriao1.push($("#Anfitriao1").find(":selected").val());
+        Anfitriao2.push($("#Anfitriao2").find(":selected").val());
+        $("#Anfitriao1").val(Anfitriao1)
+        $("#Anfitriao2").val(Anfitriao2)
+        console.log($("#Anfitriao1").val())
+        console.log($("#Anfitriao2").val())
+    }
+
+    function dia_casamento(){
+        let Dia = [];
+        Dia.push($("#Dia").find("input:date").val());
+        $("#data").val(Dia)
+        console.log($("#data").val())
+    }
 
     function add_convidado()
     {
@@ -435,6 +449,9 @@
         $("#ListaFornecedor").val(listaFornecedores)
         console.log($("#ListaFornecedor").val())
 
+        listaProdutos.push($("#Produto1").find(":selected").val());
+        $("#ListaProduto").val(listaProdutos)
+        console.log($("#ListaProduto").val())
     }
 
 </script>

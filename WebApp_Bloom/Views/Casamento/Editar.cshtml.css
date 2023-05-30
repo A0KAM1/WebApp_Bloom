@@ -1,0 +1,90 @@
+﻿/*Migalha de pão*/
+a {
+    color: #ab595e;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration-line: underline;
+    }
+
+.migalha {
+    font-size: 14px;
+    color: #ab595e;
+}
+
+/*------------------------------------------------*/
+
+.cardprincipal {
+    background-color: #f3b6b6;
+    border-radius: 30px;
+    padding: 2%;
+}
+
+label {
+    margin-top: 1%;
+    padding-right: 2%;
+}
+
+input {
+    width: 65%;
+}
+
+textarea {
+    height: 150px;
+    border: 1px solid;
+    color: black;
+    width: 65%;
+}
+
+/*----------------------------------------*/
+
+.cronogramas {
+    display: inline;
+    margin: 0;
+    height: fit-content;
+}
+
+/*----------------------------------------*/
+
+.caixa {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.botao {
+    background-color: white;
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    font-size: 23px;
+}
+
+.drop {
+    background-color: transparent;
+    border: none;
+    display: inline;
+    height: fit-content;
+}
+
+.botao_concluir {
+    border: none;
+    color: #ffeae5;
+    background-color: #ab595e;
+    border-radius: 30px;
+    padding: 1%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 30%;
+}
+
+/* Tira os botões (setinhas) do input type="number" */
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.salvar {
+    background-color: #ab595e;
+    color: #ffeae5;
+}
