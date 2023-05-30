@@ -26,6 +26,16 @@ namespace WebApp_Bloom.Controllers
             CasamentoEntidade casamento = new CasamentoEntidade();
             db.CASAMENTOS.Add(casamento);
             db.SaveChanges();
+            
+            Pessoas_CasamentoEntidade noivo = new Pessoas_CasamentoEntidade();
+            noivo.PessoaId = model.Anfitriao1;
+            noivo.CasamentoId = model.Id;
+
+            Pessoas_CasamentoEntidade noivo1 = new Pessoas_CasamentoEntidade();
+            noivo1.PessoaId = model.Anfitriao2;
+            noivo1.CasamentoId = model.Id;
+
+
 
             foreach (var item in model.ListaConvidados.Split(","))
             {
@@ -37,14 +47,14 @@ namespace WebApp_Bloom.Controllers
                 db.SaveChanges();
             }
             
-            foreach (var item in model.ListaFornecedor.Split(","))
-            {
-                Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
-                novoFornecedor.FornecedorId = int.Parse(item);
-                novoFornecedor.CasamentoId = casamento.Id;
-                db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
-                db.SaveChanges();
-            }
+            //foreach (var item in model.ListaFornecedor.Split(","))
+            //{
+            //    Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
+            //    novoFornecedor.FornecedorId = int.Parse(item);
+            //    novoFornecedor.CasamentoId = casamento.Id;
+            //    db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
+            //    db.SaveChanges();
+            //}
 
 
             return RedirectToAction("Evento","Evento");

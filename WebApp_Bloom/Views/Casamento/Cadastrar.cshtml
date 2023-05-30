@@ -51,11 +51,11 @@
             <div class="row">
                 <div class="col text-center">
                     <label>Data:</label>
-                    <input type="date" name="data" />
+                    <input type="date" name="Dia" />
                 </div>
                 <div class="col text-center">
                     <label>Horário:</label>
-                    <input type="time" name="hora" />
+                    <input type="time" name="Hora" />
                 </div>
             </div>
 
@@ -177,6 +177,8 @@
 
     <input type="hidden" name="ListaConvidados" id="ListaConvidados" />
     <input type="hidden" value="" name="ListaFornecedor" id="ListaFornecedor" />
+    <input type="hidden" value="" name="Anfitriao1" id="Anfitriao1" />
+    <input type="hidden" value="" name="Anfitriao2" id="Anfitriao2" />
     <div class="text-center">
         <button class="botao_concluir" type="submit" id="liveToastBtn">CONCLUIR</button>
     </div>
@@ -405,6 +407,15 @@
     var listaConvidados = [];
     var mesaConvidados = [];
     var listaFornecedores = [];
+
+    var Anfitriao1;
+    var Anfitriao2;
+    Anfitriao1.push($("#Anfitriao1").find(":selected").val());
+    Anfitriao2.push($("#Anfitriao2").find(":selected").val());
+    $("#Anfitriao1").val(Anfitriao1)
+    $("#Anfitriao2").val(Anfitriao2)
+    console.log($("#Anfitriao1").val())
+    console.log($("#Anfitriao2").val())
 
     function add_convidado()
     {

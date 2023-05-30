@@ -7,7 +7,7 @@ namespace WebApp_Bloom.Models
         public int Id { get; set; }
         public int Anfitriao1 { get; set; }
         public int Anfitriao2 { get; set; }
-        public Boolean Aitvo { get; set; }
+        public Boolean Ativo { get; set; }
 
         public string data { get; set; }
         public string hora { get; set; }
