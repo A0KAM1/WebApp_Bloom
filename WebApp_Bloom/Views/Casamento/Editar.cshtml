@@ -14,27 +14,22 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="col text-end">
-                    <label for="nome">
-                        Nome:
+                    <label for="nome">Nome:</label>
+                    @foreach (var item in Model.Lista)
+                    {
                         <select id="Anfitriao1" class="form-control" style="width:350px" required name="Anfitriao1">
-                            @foreach (var item in Model.Lista)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
+                            <option value="@item.Id">@item.Nome</option>
                         </select>
-                    </label>
+                    }
                 </div>
                 <div class="col mt-2 text-end">
-                    <label for="nome1">
-                        Nome:
+                    <label for="nome1">Nome:</label>
+                    @foreach(var item in Model.Lista)
+                    {
                         <select id="Anfitriao2" class="form-control" style="width:350px" required name="Anfitriao2">
-                            @foreach (var item in Model.Lista)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
-
+                            <option value="@item.Id">@item.Nome</option>
                         </select>
-                    </label>
+                    }
                 </div>
             </div>
             <div class="col">
@@ -101,16 +96,10 @@
         <div class="row align-items-center justify-content-center">
             <div class="col">
                 <div class="col text-end">
-                    <label for="nome">
-                        Nome:
-                        <select id="Convidado" class="form-control" style="width:350px" required name="Convidado">
-                            @foreach (var item in Model.Lista)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
+                    <label for="nome">Nome</label>
+                    <select id="Convidado" class="form-control" style="width:350px" required name="Convidado">
 
-                        </select>
-                    </label>
+                    </select>
                 </div>
                 <div class="col mt-3 text-end">
                     <label>Mesa:</label>
@@ -141,28 +130,15 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="col text-end align-items-start">
-                    <label for="nome">
-                        Nome:
-                        <select id="Fornecedor" class="form-control" style="width:350px" required name="Convidado">
-                            @foreach (var item in Model.ListaFornecedor)
-                            {
-                                <option value="@item.Id">@item.Nome</option>
-                            }
-
-                        </select>
-                    </label>
+                    <label for="nome">Nome:</label>
+                    <select id="Fornecedor" class="form-control" style="width:350px" required name="Convidado">
+                    </select>
                 </div>
                 <div class="col text-end align-items-start mt-3">
-                    <label for="nome">
-                        Produto:
-                        <select id="Produto" class="form-control" style="width:350px" required name="Convidado">
-                            @foreach (var item in Model.Produto)
-                            {
-                                <option value="@item.Id">@item.Produto</option>
-                            }
+                    <label for="nome">Produto:</label>
+                    <select id="Produto" class="form-control" style="width:350px" required name="Convidado">
 
-                        </select>
-                    </label>
+                    </select>
                 </div>
                 <div class="col text-end align-items-start mt-3">
                     <label>Descrição:</label>
