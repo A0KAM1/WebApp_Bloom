@@ -8,5 +8,6 @@
         public PessoaEntidade Pessoa { get; set; }
         public int PessoaId { get; set; }
         public int? Mesa { get; set; }
+        public Boolean Ativo { get; set; }
     }
 }
