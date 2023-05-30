@@ -67,7 +67,7 @@ namespace WebApp_Bloom.Controllers
         {
 
             ConvidadosViewModel model = new ConvidadosViewModel();
-            model.ConvidadosParaCasamento = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == id).Include(a => a.Pessoa).Include(a => a.Casamento).ToList();
+            model.ConvidadosParaCasamento = db.PESSOAS_CASAMENTOS.Where(a => a.CasamentoId == id).Include(a => a.Pessoa).Include(a => a.Casamento).Include(a => a.Ativo == true).ToList();
             model.CasamentoId = id;
             ; return View(model);
         }
