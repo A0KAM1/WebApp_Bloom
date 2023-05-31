@@ -60,20 +60,20 @@ namespace WebApp_Bloom.Controllers
 
             foreach (var item in model.ListaFornecedor.Split(","))
             {
-                var x = 0;
+                //var x = 0;
                 Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
                 novoFornecedor.FornecedorId = int.Parse(item);
                 novoFornecedor.CasamentoId = casamento.Id;
-                foreach (var i in model.ListaProduto.Split(","))
-                {
-                    var y = 0;
-                    if(x == y)
-                    {
-                        novoFornecedor.ProdutoId = int.Parse(i);
-                    }
-                    y++;
-                }
-                x++;
+                //foreach (var i in model.ListaProduto.Split(","))
+                //{
+                //    var y = 0;
+                //    if(x == y)
+                //    {
+                //        novoFornecedor.ProdutoId = int.Parse(i);
+                //    }
+                //    y++;
+                //}
+                //x++;
                 db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
                 db.SaveChanges();
             }
@@ -120,8 +120,8 @@ namespace WebApp_Bloom.Controllers
             db.SaveChanges();
             return Redirect("/Casamento/ListaConvidado/" + casamentoId);
         }
-
-        public IActionResult EditarConvidados(Pessoas_CasamentoEntidade convidado)
+        
+        public IActionResult EditarConvidados(PessoaEntidade convidado)
         {
             if (convidado != null)
             {
@@ -129,8 +129,17 @@ namespace WebApp_Bloom.Controllers
             }
             else
             {
-                return RedirectToAction("Lista");
+                return RedirectToAction("ListaConvidados");
             }
+        }
+        public IActionResult ExcluirConvidado(Pessoas_CasamentoEntidade id,Pessoas_CasamentoEntidade dados)
+        {
+            if (id != null)
+            {
+                db.PESSOAS_CASAMENTOS.Remove(dados);
+                db.SaveChanges();
+            }
+            return RedirectToAction("ListaConvidados");
         }
 
         [Route("[controller]/[action]/{casamentoId}/{fornecedorId}")]
