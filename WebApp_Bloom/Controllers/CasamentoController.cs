@@ -55,6 +55,7 @@ namespace WebApp_Bloom.Controllers
                 novoConvidado.PessoaId = int.Parse(item);
                 novoConvidado.CasamentoId = casamento.Id;
                 novoConvidado.Ativo = true;
+                novoConvidado.Mesa = 1;
                 db.PESSOAS_CASAMENTOS.Add(novoConvidado);
                 db.SaveChanges();
             }
