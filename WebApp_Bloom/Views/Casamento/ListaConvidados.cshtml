@@ -35,8 +35,8 @@
                             <td><label class="quadrado"><input id="select" type="checkbox" /><span class="checkmark"></span></label></td>
                             <td class="letra">@item.Pessoa.Nome</td>
                             <td><input class="campo mesa" type="number" value="@item.Mesa" /></td>
-                            <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar" class="justify-content-center botao_tabela" href="/Casamento/EditarConvidados/@item.Id">Editar</button></td>
-                            <td><button type="button" id="excluir" class="justify-content-center botao_tabela" href="/Casamento/ExcluirConvidado/@item.Id">Excluir</button></td>
+                            <td><a @*data-bs-toggle="modal" data-bs-target="#exampleModal"*@ id="editar" class="justify-content-center botao_tabela" href="/Casamento/EditarConvidadoView/@item.Id">Editar</a></td>
+                            <td><a id="excluir" class="justify-content-center botao_tabela" href="/Casamento/ExcluirConvidado/@item.Id">Excluir</a></td>
                         </tr>
                     }
 
@@ -48,7 +48,9 @@
         <input id="total" class="campo total" type="number" readonly />
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+@*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -78,7 +80,7 @@
             </form>
         </div>
     </div>
-</div>
+</div>*@
 <script>
 
 

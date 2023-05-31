@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Razor.Language.Extensions;
 using Microsoft.EntityFrameworkCore;
 using WebApp_Bloom.Entidades;
 using WebApp_Bloom.Models;
+using System.Collections.Generic;
 
 namespace WebApp_Bloom.Controllers
 {
@@ -120,18 +121,40 @@ namespace WebApp_Bloom.Controllers
             db.SaveChanges();
             return Redirect("/Casamento/ListaConvidado/" + casamentoId);
         }
-        
-        public IActionResult EditarConvidados(PessoaEntidade convidado)
+                
+        [HttpGet]
+        public IActionResult EditarConvidadoView(PessoaEntidade convidado)
         {
             if (convidado != null)
             {
-                return View(convidado);
+                var id = db.PESSOAS_CASAMENTOS.Find(convidado.Id);
+                var resultado = db.PESSOA.Find(id.PessoaId);
+                //var resultado = db.PESSOA.Where(a => a.Id == id.PessoaId);
+                return View(resultado);
             }
             else
             {
                 return RedirectToAction("ListaConvidados");
             }
         }
+
+        [Route("[controller]/[action]/{id}")]
+        [HttpPost]
+        public IActionResult SalvarDadosConvidado(int id, PessoaEntidade dados)
+        {
+            dados.RG = dados.RG.Replace(".", "");
+            dados.RG = dados.RG.Replace("-", "");
+            dados.Telefone = dados.Telefone.Replace("(", "");
+            dados.Telefone = dados.Telefone.Replace(")", "");
+            dados.Telefone = dados.Telefone.Replace("-", "");
+            dados.Telefone = dados.Telefone.Replace(" ", "");
+
+            db.PESSOA.Update(dados);
+            db.SaveChanges();
+
+            return Redirect("/Evento/Evento");
+        }
+
         public IActionResult ExcluirConvidado(Pessoas_CasamentoEntidade id,Pessoas_CasamentoEntidade dados)
         {
             if (id != null)

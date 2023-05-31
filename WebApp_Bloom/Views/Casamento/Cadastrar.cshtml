@@ -1,12 +1,12 @@
 ﻿@model WebApp_Bloom.Models.Select2PessoaModel
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
  
-
 <p class="migalha mt-3">
     <a href="/Evento">Evento</a>
     <a>></a>
     <a>Cadastrar Casamento</a>
 </p>
+
  <form action="/Casamento/SalvarDados" method="post">
     <h2 class="mt-5 text-center">DADOS PESSOAIS</h2>
     <div class="cardprincipal">
@@ -43,7 +43,6 @@
             </div>
   
     </div>
-
 
     <h2 class="mt-5 text-center">CRONOGRAMA</h2>
     <div class="cardprincipal">
@@ -91,8 +90,7 @@
 
     </div>
 
-
-    <h2 class="mt-5 text-center">CONVIDADOS</h2>
+        <h2 class="mt-5 text-center">CONVIDADOS</h2>
     <div class="cardprincipal">
         <div class="row align-items-center justify-content-center">
             <div class="col">
@@ -185,6 +183,7 @@
         <button class="botao_concluir" type="submit" id="liveToastBtn">CONCLUIR</button>
     </div>
 </form>
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header justify-content-end">

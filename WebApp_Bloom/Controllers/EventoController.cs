@@ -14,13 +14,6 @@ namespace WebApp_Bloom.Controllers
             _logger = logger;
             db = _db;
         }
-
-        public IActionResult Index()
-        {
-           
-
-            return View();
-        }
         public IActionResult Evento(int id)
         {
             
