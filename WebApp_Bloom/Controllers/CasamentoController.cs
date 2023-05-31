@@ -138,7 +138,7 @@ namespace WebApp_Bloom.Controllers
             }
         }
 
-        [Route("[controller]/[action]/{id}")]
+        //[Route("[controller]/[action]/{id}")]
         [HttpPost]
         public IActionResult SalvarDadosConvidado(int id, PessoaEntidade dados)
         {
