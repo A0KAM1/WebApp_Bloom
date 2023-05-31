@@ -59,25 +59,25 @@ namespace WebApp_Bloom.Controllers
                 db.SaveChanges();
             }
 
-            foreach (var item in model.ListaFornecedor.Split(","))
-            {
-                //var x = 0;
-                Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
-                novoFornecedor.FornecedorId = int.Parse(item);
-                novoFornecedor.CasamentoId = casamento.Id;
-                //foreach (var i in model.ListaProduto.Split(","))
-                //{
-                //    var y = 0;
-                //    if(x == y)
-                //    {
-                //        novoFornecedor.ProdutoId = int.Parse(i);
-                //    }
-                //    y++;
-                //}
-                //x++;
-                db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
-                db.SaveChanges();
-            }
+            //foreach (var item in model.ListaFornecedor.Split(","))
+            //{
+            //    //var x = 0;
+            //    Fornecedore_CasamentosEntidade novoFornecedor = new Fornecedore_CasamentosEntidade();
+            //    novoFornecedor.FornecedorId = int.Parse(item);
+            //    novoFornecedor.CasamentoId = casamento.Id;
+            //    //foreach (var i in model.ListaProduto.Split(","))
+            //    //{
+            //    //    var y = 0;
+            //    //    if(x == y)
+            //    //    {
+            //    //        novoFornecedor.ProdutoId = int.Parse(i);
+            //    //    }
+            //    //    y++;
+            //    //}
+            //    //x++;
+            //    db.FORNECEDORES_CASAMENTOS.Add(novoFornecedor);
+            //    db.SaveChanges();
+            //}
 
             
 
@@ -162,7 +162,7 @@ namespace WebApp_Bloom.Controllers
                 db.PESSOAS_CASAMENTOS.Remove(dados);
                 db.SaveChanges();
             }
-            return RedirectToAction("ListaConvidados");
+            return Redirect("/Evento/Evento");
         }
 
         [Route("[controller]/[action]/{casamentoId}/{fornecedorId}")]
