@@ -18,6 +18,7 @@
                     <select id="Anfitriao1" class="form-control" style="width:65%;" required name="Anfitriao1">
                         @foreach (var item in Model.Lista)
                         {
+                            <option value="0"></option>
                             <option value="@item.Id">@item.Nome</option>
                         }
                     </select>
@@ -27,6 +28,7 @@
                         <select id="Anfitriao2" class="form-control" style="width:65%;" required name="Anfitriao2">
                             @foreach (var item in Model.Lista)
                             {
+                                <option value="0"></option>
                                 <option value="@item.Id">@item.Nome</option>
                             }
                         </select>
@@ -99,6 +101,7 @@
                     <select id="Convidado" class="form-control" style="width:65%;" required name="Convidado">
                         @foreach (var item in Model.Lista)
                         {
+                            <option value="0"></option>
                             <option value="@item.Id">@item.Nome</option>
                         }
 
@@ -137,6 +140,7 @@
                         <select id="Fornecedor" class="form-control" style="width:65%;" required name="Fornecedor">
                             @foreach (var item in Model.ListaFornecedor)
                             {
+                                <option value="0"></option>
                                 <option value="@item.Id">@item.Nome</option>
                             }
                         </select>
@@ -146,6 +150,7 @@
                         <select id="Produto1" class="form-control" style="width:65%;" required name="Produto">
                             @foreach (var item in Model.Produto)
                             {
+                                <option value="0"></option>
                                 <option value="@item.Id">@item.Produto</option>
                             }
                         </select>
@@ -442,5 +447,7 @@
         $("#ListaProduto").val(listaProdutos)
         console.log($("#ListaProduto").val())
     }
+
+    $('b[role="presentation"]').hide();
 
 </script>

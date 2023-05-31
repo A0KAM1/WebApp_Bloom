@@ -55,3 +55,7 @@ body {
     height: 48px;
     width: 280px;
 }
+
+.select2-selection__arrow {
+    display: none;
+}
